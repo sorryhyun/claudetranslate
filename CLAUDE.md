@@ -4,59 +4,79 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Claude Translate is a multi-stage document translation plugin for Claude Code. It orchestrates a pipeline of specialized agents to analyze, split, summarize, translate, and verify documents.
+Claude Translate is a multi-stage document translation plugin for Claude Code. It orchestrates a pipeline of specialized agents to analyze, split, summarize, translate, and verify documents using a **file-based workflow** where all intermediate results are persisted to disk.
+
+## Commands
+
+```bash
+# Run MCP tools tests
+python3 test/test_mcp_tools.py
+
+# Test MCP server directly (JSON-RPC over stdin/stdout)
+echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | python3 -m mcp.mcp
+```
 
 ## Architecture
 
+### File-Based Workflow
+
+The `/translate` command creates a workspace directory next to the source file:
+```
+source_translate_temp/
+├── manifest.json           # Job state and chunk metadata
+├── glossary.json           # Running terminology glossary
+├── context/
+│   └── context_analysis.md
+└── chunks/
+    ├── source/             # chunk_001.txt, chunk_002.txt, ...
+    ├── summaries/          # summary_001.md, ...
+    ├── translations/       # translation_001.md, ...
+    └── verifications/      # verification_001.md, ...
+```
+
+All agents receive file paths (not text content) and write their output to files. The `manifest.json` tracks job state across all 7 pipeline phases.
+
 ### Translation Pipeline (7 Phases)
 
-The `/translate` command executes sequentially:
-1. **Input Validation** - Parse args, validate file/language, load config
-2. **Context Analysis** - `context-analyzer` agent extracts domain, tone, terminology
-3. **Text Splitting** - MCP tool splits into ~1000-word chunks at logical boundaries
-4. **Summarization** - `summarizer` agents process chunks (parallel, batches of 5)
-5. **Translation** - `translator` agents translate chunks (sequential for consistency)
-6. **Verification** - `verifier` agents validate quality (parallel, optional)
-7. **Assembly** - Combine chunks, generate translation report
-
-### Agent System
-
-Agents are defined in `agents/` as markdown files with YAML frontmatter:
-- `context-analyzer.md` - Document analysis (model: sonnet)
-- `summarizer.md` - Chunk summarization (model: haiku)
-- `translator.md` - Translation execution (model: sonnet)
-- `verifier.md` - Quality verification (model: sonnet)
+1. **Input Validation** - Parse args, init workspace via `init_workspace` MCP tool
+2. **Context Analysis** - `context-analyzer` agent writes to `context/context_analysis.md`
+3. **Text Splitting** - `split_text` MCP tool creates chunk files and updates manifest
+4. **Summarization** - `summarizer` agents write to `chunks/summaries/` (parallel, batches of 5)
+5. **Translation** - `translator` agents write to `chunks/translations/` (sequential)
+6. **Verification** - `verifier` agents write to `chunks/verifications/` (parallel, optional)
+7. **Assembly** - `assemble_translation` MCP tool combines chunks into final output
 
 ### MCP Server
 
-The `mcp/` directory contains the MCP server with modular tool loading:
+The `mcp/` directory contains the MCP server with modular tool loading. Each tool group is a subdirectory with `schema.json` and Python modules exposing `handle(arguments)` functions.
 
-```
-mcp/
-  mcp.py              # Main server with dynamic tool discovery
-  text_split/         # Text splitting tool group
-    __init__.py       # Exports TOOLS mapping
-    schema.json       # Tool definitions
-    count_words.py    # Word count utility
-    split_text.py     # Main chunking logic
-    split_paragraphs.py # Paragraph extraction
-```
+**Tool Groups:**
+- `text_split/` - Text chunking (`split_text`, `count_words`, `split_paragraphs`)
+- `workspace/` - Workspace management (`init_workspace`, `read_manifest`, `update_manifest`, `update_glossary`, `assemble_translation`)
 
-Each tool group is a subdirectory with `schema.json` and Python modules exposing `handle(arguments)` functions. The server auto-discovers groups at startup.
+The server auto-discovers tool groups at startup via `_load_tool_groups()` in `mcp.py`.
+
+### Agent System
+
+Agents in `agents/` are markdown files with YAML frontmatter. All agents have access to `Read` and `Write` tools and work with file paths:
+
+| Agent | Model | Purpose |
+|-------|-------|---------|
+| `context-analyzer` | sonnet | Document domain/tone/terminology analysis |
+| `summarizer` | haiku | Chunk summarization for context |
+| `translator` | sonnet | Translation execution |
+| `verifier` | sonnet | Quality verification |
 
 ### Key Files
 
-- `commands/translate.md` - Main orchestration logic and CLI interface
+- `commands/translate.md` - Main orchestration logic (7-phase pipeline)
 - `.claude-plugin/config/languages.json` - 19 supported languages with aliases
 - `.mcp.json` - MCP server configuration
 
 ## Usage
 
 ```bash
-# Basic translation
 /translate document.md --target korean
-
-# With options
 /translate doc.txt --target ja --output doc_ja.txt --skip-verify
 ```
 
@@ -64,3 +84,4 @@ Each tool group is a subdirectory with `schema.json` and Python modules exposing
 
 - `{basename}_{lang_code}.{ext}` - Translated document
 - `{basename}_{lang_code}_report.md` - Quality metrics, glossary, notes
+- `{basename}_translate_temp/` - Workspace with all intermediate files (preserved for debugging)
