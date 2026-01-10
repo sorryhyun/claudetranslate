@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "target_language": "korean",
+  "target_language_code": "ko",
+  "terms": [
+    {
+      "source": "API",
+      "translation": "API",
+      "notes": "Keep as-is"
+    },
+    {
+      "source": "function",
+      "translation": "함수",
+      "notes": "Standard term"
+    }
+  ]
+}

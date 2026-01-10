@@ -1,0 +1,1 @@
+"""Claude Translate MCP Server."""

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "translator": {
+      "command": "python3",
+      "args": ["-m", "mcp.mcp"]
+    }
+  }
+}

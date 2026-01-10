@@ -1,0 +1,136 @@
+{
+  "tools": [
+    {
+      "name": "init_workspace",
+      "description": "Initialize a translation workspace directory structure next to the source file.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "source_file_path": {
+            "type": "string",
+            "description": "Absolute path to the source document"
+          },
+          "target_language": {
+            "type": "string",
+            "description": "Target language name (e.g., 'korean', 'japanese')"
+          },
+          "target_language_code": {
+            "type": "string",
+            "description": "ISO language code for output file naming (e.g., 'ko', 'ja')"
+          },
+          "output_path": {
+            "type": "string",
+            "description": "Optional custom output path for translated file"
+          },
+          "skip_verify": {
+            "type": "boolean",
+            "description": "Whether to skip verification phase",
+            "default": false
+          }
+        },
+        "required": ["source_file_path", "target_language", "target_language_code"]
+      }
+    },
+    {
+      "name": "read_manifest",
+      "description": "Read the translation manifest to get current job state.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "manifest_path": {
+            "type": "string",
+            "description": "Path to manifest.json"
+          }
+        },
+        "required": ["manifest_path"]
+      }
+    },
+    {
+      "name": "update_manifest",
+      "description": "Update the translation manifest with phase progress or chunk status.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "manifest_path": {
+            "type": "string",
+            "description": "Path to manifest.json"
+          },
+          "phase": {
+            "type": "string",
+            "description": "Phase to update",
+            "enum": ["input_validation", "context_analysis", "text_splitting", "summarization", "translation", "verification", "assembly"]
+          },
+          "phase_status": {
+            "type": "string",
+            "description": "New status for the phase",
+            "enum": ["pending", "in_progress", "completed"]
+          },
+          "phase_progress": {
+            "type": "string",
+            "description": "Optional progress indicator (e.g., '3/8')"
+          },
+          "chunk_index": {
+            "type": "integer",
+            "description": "Chunk index to update (1-based)"
+          },
+          "chunk_updates": {
+            "type": "object",
+            "description": "Key-value pairs to update in the chunk entry"
+          }
+        },
+        "required": ["manifest_path"]
+      }
+    },
+    {
+      "name": "update_glossary",
+      "description": "Add or update terms in the translation glossary.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "glossary_path": {
+            "type": "string",
+            "description": "Path to glossary.json"
+          },
+          "terms": {
+            "type": "array",
+            "description": "Array of term objects to add/update",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "translation": {
+                  "type": "string"
+                },
+                "notes": {
+                  "type": "string"
+                }
+              },
+              "required": ["source", "translation"]
+            }
+          }
+        },
+        "required": ["glossary_path", "terms"]
+      }
+    },
+    {
+      "name": "assemble_translation",
+      "description": "Assemble translated chunks into the final output document.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "manifest_path": {
+            "type": "string",
+            "description": "Path to manifest.json"
+          },
+          "output_path": {
+            "type": "string",
+            "description": "Path for the assembled output file"
+          }
+        },
+        "required": ["manifest_path", "output_path"]
+      }
+    }
+  ]
+}

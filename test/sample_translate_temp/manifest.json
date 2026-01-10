@@ -1,0 +1,98 @@
+{
+  "version": "1.0",
+  "created_at": "2026-01-10T04:58:56.092201+00:00",
+  "updated_at": "2026-01-10T04:58:56.093082+00:00",
+  "source": {
+    "file_path": "/home/soryhyun/claudetranslate/test/sample.md",
+    "word_count": 853
+  },
+  "target": {
+    "language": "korean",
+    "code": "ko",
+    "output_path": "/home/soryhyun/claudetranslate/test/sample_ko.md"
+  },
+  "options": {
+    "skip_verify": false,
+    "target_chunk_words": 1000,
+    "min_chunk_words": 500,
+    "max_chunk_words": 1500
+  },
+  "phases": {
+    "input_validation": {
+      "status": "completed",
+      "completed_at": "2026-01-10T04:58:56.092201+00:00"
+    },
+    "context_analysis": {
+      "status": "completed",
+      "completed_at": "2026-01-10T04:58:56.093082+00:00"
+    },
+    "text_splitting": {
+      "status": "pending"
+    },
+    "summarization": {
+      "status": "pending"
+    },
+    "translation": {
+      "status": "pending"
+    },
+    "verification": {
+      "status": "pending"
+    },
+    "assembly": {
+      "status": "pending"
+    }
+  },
+  "chunks": [
+    {
+      "index": 1,
+      "source_file": "chunks/source/chunk_001.txt",
+      "word_count": 521,
+      "start_pos": 0,
+      "end_pos": 3565,
+      "headers": [
+        "Introduction to Machine Learning",
+        "What is Machine Learning?",
+        "Types of Machine Learning",
+        "Supervised Learning",
+        "Unsupervised Learning",
+        "Reinforcement Learning",
+        "Key Concepts",
+        "Training and Testing",
+        "Features and Labels"
+      ],
+      "summary_file": "chunks/summaries/summary_001.md",
+      "summary_status": "pending",
+      "translation_file": "chunks/translations/translation_001.md",
+      "translation_status": "pending",
+      "translation_confidence": null,
+      "verification_file": "chunks/verifications/verification_001.md",
+      "verification_status": "pending",
+      "verification_score": null
+    },
+    {
+      "index": 2,
+      "source_file": "chunks/source/chunk_002.txt",
+      "word_count": 332,
+      "start_pos": 3565,
+      "end_pos": 5922,
+      "headers": [
+        "Overfitting and Underfitting",
+        "Practical Considerations",
+        "Data Quality",
+        "Model Selection",
+        "Ethical Considerations",
+        "Conclusion"
+      ],
+      "summary_file": "chunks/summaries/summary_002.md",
+      "summary_status": "pending",
+      "translation_file": "chunks/translations/translation_002.md",
+      "translation_status": "pending",
+      "translation_confidence": null,
+      "verification_file": "chunks/verifications/verification_002.md",
+      "verification_status": "pending",
+      "verification_score": null
+    }
+  ],
+  "context_analysis_file": "context/context_analysis.md",
+  "glossary_file": "glossary.json"
+}
