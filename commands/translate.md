@@ -3,6 +3,12 @@ description: Translate documents through a multi-stage pipeline with context ana
 argument-hint: <source-file> --target <language> [--output <file>] [--skip-verify]
 allowed-tools: ["Read", "Write", "Bash", "Glob", "Grep", "TodoWrite", "Task"]
 hooks:
+  PostToolUse:
+    - matcher: "mcp__.*__init_workspace"
+      hooks:
+        - type: command
+          command: "${CLAUDE_PLUGIN_ROOT}/scripts/apply_output_style.sh"
+          timeout: 5
   Stop:
     - hooks:
         - type: command
@@ -36,15 +42,17 @@ source_translate_temp/
 
 ## Pipeline Phases
 
-Execute each phase in order. Use TodoWrite to track progress through all 7 phases.
+Execute each phase in order. Use TodoWrite to track progress through all 5 phases.
 
 ---
 
-### Phase 1: Input Validation and Setup
+### Phase 1: Setup, Context Analysis, and Text Splitting
+
+**Goal:** Validate inputs, initialize workspace, analyze document context, and split into chunks
 
 **Actions:**
 
-1. Create a todo list with all 7 phases using TodoWrite
+1. Create a todo list with all 5 phases using TodoWrite
 
 2. Parse arguments to extract:
    - **Source file path** (required, first positional argument)
@@ -87,12 +95,7 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
 
    - Also accept language codes directly (e.g., `ko` → `korean`)
 
-5. Apply output style for target language:
-   - Read the style file from `${CLAUDE_PLUGIN_ROOT}/styles/{target_language}.md`
-   - Internalize the style guidelines for all subsequent responses
-   - This ensures your translation output follows the target language's conventions
-
-6. Initialize the workspace using the **init_workspace MCP tool** `mcp__plugin_claude-translate_translator__init_workspace`:
+5. Initialize the workspace using the **init_workspace MCP tool** `mcp__plugin_claude-translate_translator__init_workspace`:
    - `source_file_path`: Absolute path to source file
    - `target_language`: Full language name (e.g., "korean")
    - `target_language_code`: ISO code (e.g., "ko")
@@ -106,36 +109,23 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
    - `output_path`: Where the final translation will be written
    - `source_word_count`: Word count of source document
 
-7. Store the workspace paths for subsequent phases
+6. Store the workspace paths for subsequent phases
 
-8. Create symlink for Stop hook to track manifest:
+7. Create symlink for Stop hook to track manifest:
    ```bash
    ln -sf "[manifest_path]" /tmp/claude_translate_manifest.json
    ```
-   Replace `[manifest_path]` with the actual manifest path from step 6.
+   Replace `[manifest_path]` with the actual manifest path from step 5.
 
-9. Mark Phase 1 as complete in todo list
+8. **Context Analysis** - Launch the context-analyzer agent:
 
----
+   Update manifest phase status to "in_progress" for context_analysis.
 
-### Phase 2: Context Analysis
-
-**Goal:** Understand the document's domain, tone, terminology, and style
-
-**Actions:**
-
-1. Mark Phase 2 as in_progress in todo list
-
-2. Update manifest phase status using **update_manifest MCP tool** `mcp__plugin_claude-translate_translator__update_manifest`:
-   - `manifest_path`: Path to manifest.json
-   - `phase`: "context_analysis"
-   - `phase_status`: "in_progress"
-
-3. Launch the **context-analyzer** agent using the Task tool with file paths:
+   Launch the **context-analyzer** agent using the Task tool:
    ```
    Analyze this document for translation context.
 
-   source_file_path: [source file path from Phase 1]
+   source_file_path: [source file path]
    output_file_path: [workspace_dir]/context/context_analysis.md
 
    Target language: [target language]
@@ -143,47 +133,37 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
    Read the source document and write your analysis to the output file.
    ```
 
-4. Update manifest to mark context_analysis phase as completed
+   Update manifest to mark context_analysis phase as completed.
 
-5. Mark Phase 2 as complete
+9. **Text Splitting** - Split document into chunks:
 
----
+    Update manifest phase status to "in_progress" for text_splitting.
 
-### Phase 3: Text Splitting
+    Use the **split_text MCP tool** `mcp__plugin_claude-translate_translator__split_text`:
+    - `source_file_path`: Path to source document
+    - `output_dir`: Path to workspace directory
+    - `target_words`: 1000
+    - `min_words`: 500
+    - `max_words`: 1500
 
-**Goal:** Split document into ~1000 word chunks preserving logical boundaries
+    The tool:
+    - Creates individual chunk files: `chunks/source/chunk_001.txt`, etc.
+    - Updates `manifest.json` with chunk metadata
+    - Returns: `manifest_path`, `chunk_count`, `total_words`, `chunk_files`
 
-**Actions:**
+    Update manifest to mark text_splitting phase as completed.
 
-1. Mark Phase 3 as in_progress
-
-2. Update manifest phase status to "in_progress" for text_splitting
-
-3. Use the **split_text MCP tool** `mcp__plugin_claude-translate_translator__split_text`:
-   - `source_file_path`: Path to source document
-   - `output_dir`: Path to workspace directory
-   - `target_words`: 1000
-   - `min_words`: 500
-   - `max_words`: 1500
-
-   The tool:
-   - Creates individual chunk files: `chunks/source/chunk_001.txt`, etc.
-   - Updates `manifest.json` with chunk metadata
-   - Returns: `manifest_path`, `chunk_count`, `total_words`, `chunk_files`
-
-4. Update manifest to mark text_splitting phase as completed
-
-5. Mark Phase 3 as complete
+10. Mark Phase 1 as complete in todo list
 
 ---
 
-### Phase 4: Summarization
+### Phase 2: Summarization
 
 **Goal:** Create summaries for each chunk to maintain context across translations
 
 **Actions:**
 
-1. Mark Phase 4 as in_progress
+1. Mark Phase 2 as in_progress
 
 2. Update manifest phase status to "in_progress" for summarization
 
@@ -209,23 +189,21 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
 
 7. Update manifest to mark summarization phase as completed
 
-8. Mark Phase 4 as complete
+8. Mark Phase 2 as complete
 
 ---
 
-### Phase 5: Translation
+### Phase 3: Translation
 
-**Goal:** Translate each chunk while maintaining consistency
+**Goal:** Translate each chunk using context and summaries
 
 **Actions:**
 
-1. Mark Phase 5 as in_progress
+1. Mark Phase 3 as in_progress
 
 2. Update manifest phase status to "in_progress" for translation
 
-3. Process chunks **sequentially** (one at a time) to ensure consistency:
-
-   For each chunk, launch the **translator** agent using the Task tool with file paths:
+3. For each chunk, launch the **translator** agent using the Task tool with file paths:
    ```
    Translate this text chunk to [target language].
 
@@ -235,7 +213,6 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
    prev_summary_path: [workspace_dir]/chunks/summaries/summary_[NNN-1].md (or "none" for first chunk)
    next_summary_path: [workspace_dir]/chunks/summaries/summary_[NNN+1].md (or "none" for last chunk)
    glossary_file_path: [workspace_dir]/glossary.json
-   prev_translation_path: [workspace_dir]/chunks/translations/translation_[NNN-1].md (or "none" for first chunk)
    output_file_path: [workspace_dir]/chunks/translations/translation_[NNN].md
 
    Chunk index: [index] of [total]
@@ -244,21 +221,23 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
    Read all input files and write your translation to the output file.
    ```
 
-4. After each translation:
-   - Read the translation output file
+4. **Parallelization:** Launch up to 5 translator agents in parallel for efficiency. Wait for each batch to complete before launching the next batch.
+
+5. After all translations complete:
+   - Read each translation output file
    - Parse the "Glossary Additions" section from the markdown table
    - Use **update_glossary MCP tool** `mcp__plugin_claude-translate_translator__update_glossary` to add new terms:
      - `glossary_path`: Path to glossary.json
-     - `terms`: Array of term objects from the translation output
-   - Update manifest with chunk translation status and confidence level
+     - `terms`: Array of term objects from all translation outputs
+   - Update manifest with chunk translation status and confidence levels
 
-5. Update manifest to mark translation phase as completed
+6. Update manifest to mark translation phase as completed
 
-6. Mark Phase 5 as complete
+7. Mark Phase 3 as complete
 
 ---
 
-### Phase 6: Verification (Optional)
+### Phase 4: Verification (Optional)
 
 **Goal:** Verify translation quality and flag issues
 
@@ -266,7 +245,7 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
 
 **Actions:**
 
-1. Mark Phase 6 as in_progress (or skip if --skip-verify)
+1. Mark Phase 4 as in_progress (or skip if --skip-verify)
 
 2. Update manifest phase status to "in_progress" for verification
 
@@ -297,21 +276,21 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
 7. If critical issues are found:
    - Present issues to the user
    - Ask: "Would you like me to re-translate the problematic sections?"
-   - If yes, go back to Phase 5 for affected chunks only
+   - If yes, go back to Phase 3 for affected chunks only
 
 8. Update manifest to mark verification phase as completed
 
-9. Mark Phase 6 as complete
+9. Mark Phase 4 as complete
 
 ---
 
-### Phase 7: Assembly and Output
+### Phase 5: Assembly and Output
 
 **Goal:** Combine translated chunks and write output file
 
 **Actions:**
 
-1. Mark Phase 7 as in_progress
+1. Mark Phase 5 as in_progress
 
 2. Update manifest phase status to "in_progress" for assembly
 
@@ -371,7 +350,7 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
    - Provide path to the translation report
    - Note that workspace directory is preserved for debugging
 
-7. Mark Phase 7 as complete
+7. Mark Phase 5 as complete
 
 8. Clean up manifest symlink:
    ```bash

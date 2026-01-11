@@ -34,17 +34,15 @@ source_translate_temp/
     └── verifications/      # verification_001.md, ...
 ```
 
-All agents receive file paths (not text content) and write their output to files. The `manifest.json` tracks job state across all 7 pipeline phases.
+All agents receive file paths (not text content) and write their output to files. The `manifest.json` tracks job state across all 5 pipeline phases.
 
-### Translation Pipeline (7 Phases)
+### Translation Pipeline (5 Phases)
 
-1. **Input Validation** - Parse args, init workspace via `init_workspace` MCP tool
-2. **Context Analysis** - `context-analyzer` agent writes to `context/context_analysis.md`
-3. **Text Splitting** - `split_text` MCP tool creates chunk files and updates manifest
-4. **Summarization** - `summarizer` agents write to `chunks/summaries/` (parallel, batches of 5)
-5. **Translation** - `translator` agents write to `chunks/translations/` (sequential)
-6. **Verification** - `verifier` agents write to `chunks/verifications/` (parallel, optional)
-7. **Assembly** - `assemble_translation` MCP tool combines chunks into final output
+1. **Setup, Context Analysis, and Text Splitting** - Main agent parses args, inits workspace, spawns `context-analyzer` agent, and splits text via MCP tools
+2. **Summarization** - `summarizer` agents write to `chunks/summaries/` (parallel, batches of 5)
+3. **Translation** - `translator` agents write to `chunks/translations/` (parallel, batches of 5)
+4. **Verification** - `verifier` agents write to `chunks/verifications/` (parallel, optional)
+5. **Assembly** - `assemble_translation` MCP tool combines chunks into final output
 
 ### MCP Server
 
@@ -90,7 +88,7 @@ The filename (without `.md`) is the language identifier. Language codes are mapp
 
 ### Key Files
 
-- `commands/translate.md` - Main orchestration logic (7-phase pipeline)
+- `commands/translate.md` - Main orchestration logic (5-phase pipeline)
 - `styles/*.md` - 19 supported language styles with metadata
 - `.mcp.json` - MCP server configuration
 

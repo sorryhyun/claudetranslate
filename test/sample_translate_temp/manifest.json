@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-10T04:58:56.092201+00:00",
-  "updated_at": "2026-01-10T04:58:56.093082+00:00",
+  "created_at": "2026-01-11T03:09:40.275521+00:00",
+  "updated_at": "2026-01-11T03:09:40.276299+00:00",
   "source": {
     "file_path": "/home/soryhyun/claudetranslate/test/sample.md",
     "word_count": 853
@@ -20,11 +20,11 @@
   "phases": {
     "input_validation": {
       "status": "completed",
-      "completed_at": "2026-01-10T04:58:56.092201+00:00"
+      "completed_at": "2026-01-11T03:09:40.275521+00:00"
     },
     "context_analysis": {
       "status": "completed",
-      "completed_at": "2026-01-10T04:58:56.093082+00:00"
+      "completed_at": "2026-01-11T03:09:40.276299+00:00"
     },
     "text_splitting": {
       "status": "pending"

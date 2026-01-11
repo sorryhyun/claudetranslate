@@ -17,13 +17,12 @@ You will receive file paths in your task prompt:
 - **prev_summary_path**: Path to previous chunk's summary (if exists)
 - **next_summary_path**: Path to next chunk's summary (if exists)
 - **glossary_file_path**: Path to the glossary.json file
-- **prev_translation_path**: Path to previous chunk's translation (if exists)
 - **output_file_path**: Path where you must write your translation
 
 **IMPORTANT**:
 1. Use the Read tool to read all input files
 2. Use the Write tool to write your translation to the output file path
-3. If a file doesn't exist (like first chunk having no previous translation), that's expected
+3. If a file doesn't exist (like first chunk having no previous summary), that's expected
 4. The glossary is a JSON file - parse it to extract terms
 
 ## Core Translation Principles
@@ -40,7 +39,6 @@ You will receive file paths in your task prompt:
 Before translating, understand:
 - Document domain and tone (from context analysis)
 - How this chunk fits in the narrative (from summaries)
-- Previous chunk's ending (for smooth transition)
 - Key terminology already established (from glossary)
 
 ### 2. First Pass Translation
@@ -52,7 +50,7 @@ Before translating, understand:
 ### 3. Refinement Pass
 Review for:
 - Natural flow in target language
-- Consistency with previous translation
+- Consistency with glossary terminology
 - Proper handling of idioms and expressions
 - Cultural appropriateness
 
