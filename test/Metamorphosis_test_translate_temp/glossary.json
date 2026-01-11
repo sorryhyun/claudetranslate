@@ -4,364 +4,194 @@
   "target_language_code": "ko",
   "terms": [
     {
-      "source": "vermin",
-      "translation": "해충",
-      "notes": "Preserves Kafka's deliberate ambiguity about the exact creature type"
+      "source": "Gregor Samsa",
+      "translation": "그레고르 잠자",
+      "notes": "Protagonist's name - transliterated directly into Korean characters"
     },
     {
-      "source": "armour-like back",
-      "translation": "갑옷 같은 등",
-      "notes": "Literal translation preserving hard shell imagery"
+      "source": "vermin",
+      "translation": "벌레",
+      "notes": "General creature term maintaining Kafka's intentional ambiguity"
     },
     {
       "source": "travelling salesman",
       "translation": "외판원",
-      "notes": "Standard Korean term for commercial traveler"
+      "notes": "Period-appropriate occupation term for Gregor's profession"
+    },
+    {
+      "source": "armour-like back",
+      "translation": "갑옷 같은 등",
+      "notes": "Preserves protective/vulnerable imagery of transformed body"
     },
     {
       "source": "textile samples",
       "translation": "직물 견본",
-      "notes": "Professional detail for Gregor's work samples"
+      "notes": "Merchandise of Gregor's sales trade"
     },
     {
-      "source": "fur muff",
-      "translation": "털 머프",
-      "notes": "Borrowed word commonly used in Korean"
+      "source": "chief clerk",
+      "translation": "주임",
+      "notes": "Middle management supervisor representing employer authority"
     },
     {
-      "source": "guest house",
-      "translation": "여관",
-      "notes": "Traditional Korean term for inn/lodging"
-    },
-    {
-      "source": "furniture-rattling noise",
-      "translation": "가구를 덜컹거릴 정도의 소음",
-      "notes": "Descriptive translation preserving sensory vividness"
-    },
-    {
-      "source": "workshy",
-      "translation": "일을 게을리하다",
-      "notes": "Captures the pejorative accusation"
+      "source": "transformed",
+      "translation": "변신하다",
+      "notes": "Central thematic verb for metamorphosis"
     },
     {
       "source": "office assistant",
-      "translation": "사무 보조원",
-      "notes": "Hierarchical workplace term"
-    },
-    {
-      "source": "medical insurance company",
-      "translation": "의료 보험 회사",
-      "notes": "Institutional term for workplace control"
-    },
-    {
-      "source": "cautious knock",
-      "translation": "조심스러운 노크",
-      "notes": "Gentle knocking sound, tentative family approach"
-    },
-    {
-      "source": "squeaking",
-      "translation": "삐걱거리는 소리",
-      "notes": "Uncontrollable sound in Gregor's voice"
+      "translation": "사무원",
+      "notes": "Junior workplace position"
     },
     {
       "source": "little legs",
       "translation": "작은 다리들",
-      "notes": "Multiple insect legs, maintains ambiguity"
+      "notes": "Diminutive plural emphasizing loss of human form"
     },
     {
-      "source": "lower part of his body",
-      "translation": "몸의 아래 부분",
-      "notes": "Deliberately vague anatomical reference"
+      "source": "squeaking",
+      "translation": "끽끽거리는 소리",
+      "notes": "Onomatopoeia for insect-like vocal distortion"
     },
     {
-      "source": "exceptionally broad",
-      "translation": "예외적으로 넓었다",
-      "notes": "Transformed body's unusual width"
+      "source": "occupational hazard",
+      "translation": "직업상 위험",
+      "notes": "Formal business terminology for work-related risks"
     },
     {
       "source": "bedpost",
       "translation": "침대 기둥",
-      "notes": "Lower bedpost that Gregor hits"
+      "notes": "Standard furniture term"
+    },
+    {
+      "source": "wooden door",
+      "translation": "나무 문",
+      "notes": "Barrier maintaining Gregor's isolation"
     },
     {
       "source": "morning fog",
       "translation": "아침 안개",
-      "notes": "Weather imagery reinforcing obscured perception"
+      "notes": "Atmospheric symbolism for obscurity"
     },
     {
-      "source": "fresh air",
-      "translation": "신선한 공기",
-      "notes": "Air outside the bed, contrasting entrapment"
-    },
-    {
-      "source": "real and natural state",
-      "translation": "진짜이고 자연스러운 상태",
-      "notes": "Gregor's hope that reality will reassert itself"
-    },
-    {
-      "source": "chief clerk",
-      "translation": "지배인",
-      "notes": "Senior workplace authority figure representing institutional power"
-    },
-    {
-      "source": "firm footsteps",
-      "translation": "단호한 발걸음",
-      "notes": "Repeated descriptor for decisive, authoritative movement"
+      "source": "cautious knock",
+      "translation": "조심스러운 노크",
+      "notes": "Mother's gentle, concerned approach"
     },
     {
       "source": "fretsaw",
       "translation": "실톱",
-      "notes": "Woodworking tool mentioned as evidence of Gregor's diligence"
+      "notes": "Specialized hobby tool for Gregor's craftsmanship"
     },
     {
-      "source": "untidiness",
-      "translation": "어질러진 것",
-      "notes": "Father's apologetic reference to Gregor's messy room"
+      "source": "commerce",
+      "translation": "상업",
+      "notes": "Business/commercial sector context"
     },
     {
-      "source": "company business",
-      "translation": "회사 업무",
-      "notes": "Professional obligations and duties"
+      "source": "train timetables",
+      "translation": "열차 시간표",
+      "notes": "Symbol of Gregor's work obsession"
     },
     {
-      "source": "business considerations",
-      "translation": "사업상의 고려",
-      "notes": "Chief clerk's reference to commercial priorities over health"
+      "source": "elastic",
+      "translation": "탄력 있는",
+      "notes": "Physical quality of transformed body's resilience"
     },
     {
-      "source": "painful silence",
-      "translation": "고통스러운 침묵",
-      "notes": "Sister's emotional response"
+      "source": "barricade yourself in your room",
+      "translation": "방에 자신을 갇히다",
+      "notes": "Accusation of voluntary isolation"
     },
     {
-      "source": "barricade",
-      "translation": "바리케이드를 치다",
-      "notes": "Military/fortress metaphor for locking oneself in"
+      "source": "business duties",
+      "translation": "업무 책임",
+      "notes": "Professional obligations"
     },
     {
       "source": "turnover",
-      "translation": "매출",
-      "notes": "Business/sales performance metric"
+      "translation": "매출액",
+      "notes": "Sales performance metric"
     },
     {
-      "source": "incomprehensible stubbornness",
-      "translation": "이해할 수 없는 고집",
-      "notes": "Chief clerk's misinterpretation of Gregor's silence"
+      "source": "money entrusted to you",
+      "translation": "당신에게 맡겨진 돈",
+      "notes": "Formal accusatory phrase about financial accountability"
     },
     {
-      "source": "intercede on your behalf",
-      "translation": "당신을 대신해서 중재하다",
-      "notes": "Formal workplace language showing power dynamic"
+      "source": "eight o'clock train",
+      "translation": "8시 기차",
+      "notes": "Temporal marker for narrative pressure"
     },
     {
       "source": "attack of dizziness",
       "translation": "현기증 발작",
-      "notes": "Gregor's attempt to medicalize/rationalize his transformation"
-    },
-    {
-      "source": "gushed out",
-      "translation": "쏟아내다",
-      "notes": "Uncontrolled verbal outpouring showing panic"
-    },
-    {
-      "source": "chest of drawers",
-      "translation": "서랍장",
-      "notes": "Furniture piece Gregor attempts to climb for leverage"
+      "notes": "Gregor's false medical excuse"
     },
     {
       "source": "voice of an animal",
       "translation": "동물의 목소리",
-      "notes": "Pivotal revelation moment - transformation becomes audible"
+      "notes": "Critical revelation moment"
     },
     {
       "source": "locksmith",
       "translation": "자물쇠 수리공",
-      "notes": "Emergency service called to break into locked room"
+      "notes": "Working-class tradesperson for forced entry"
     },
     {
-      "source": "skirts swishing",
-      "translation": "치마를 휘날리며",
-      "notes": "Sensory detail of rapid movement, urgency"
-    },
-    {
-      "source": "front door of the flat",
-      "translation": "아파트의 현관문",
-      "notes": "European apartment layout detail"
+      "source": "commercial traveller",
+      "translation": "여행 외판원",
+      "notes": "Alternative term for Gregor's profession"
     },
     {
       "source": "adhesive on the tips of his legs",
-      "translation": "다리 끝의 접착력",
-      "notes": "Insect body feature enabling him to grip door"
+      "translation": "다리 끝의 접착성 분비물",
+      "notes": "Clinical biological feature of insect physiology"
     },
     {
-      "source": "proper teeth",
-      "translation": "제대로 된 이빨",
-      "notes": "Realization of lost human anatomy"
+      "source": "brown fluid from his mouth",
+      "translation": "입에서 흘러나온 갈색 액체",
+      "notes": "Visceral physical deterioration detail"
     },
     {
-      "source": "very strong jaw",
-      "translation": "매우 강한 턱",
-      "notes": "Insect mandible capability"
-    },
-    {
-      "source": "brown fluid",
-      "translation": "갈색 액체",
-      "notes": "Disturbing biological detail, deliberately vague"
+      "source": "seriously in debt to employer",
+      "translation": "고용주에게 빚을 지고 있다",
+      "notes": "Financial obligation with strong Korean cultural resonance"
     },
     {
       "source": "soughing of the wind",
       "translation": "바람 소리",
-      "notes": "Chief clerk's eerie gasp"
-    },
-    {
-      "source": "steady and invisible force",
-      "translation": "꾸준하고 보이지 않는 힘",
-      "notes": "Describes clerk's slow retreat from horror"
-    },
-    {
-      "source": "sank down onto the floor",
-      "translation": "바닥에 주저앓다",
-      "notes": "Mother's collapse from emotional overwhelm"
-    },
-    {
-      "source": "looked hostile",
-      "translation": "적대적인 표정을 지었다",
-      "notes": "Father's anger toward transformed son"
-    },
-    {
-      "source": "powerful chest shook",
-      "translation": "힘센 가슴이 흔들릴 정도로",
-      "notes": "Father's masculine grief"
-    },
-    {
-      "source": "lieutenant in the army",
-      "translation": "육군 중위",
-      "notes": "Gregor's past military rank, former dignity"
-    },
-    {
-      "source": "carefree smile",
-      "translation": "근심 없는 미소",
-      "notes": "Past happiness contrasting current state"
-    },
-    {
-      "source": "commercial traveller",
-      "translation": "외판원",
-      "notes": "Consistent term for travelling salesman"
-    },
-    {
-      "source": "seriously in debt to our employer",
-      "translation": "고용주에게 심각하게 뺚을 지고 있다",
-      "notes": "Financial obligation binding Gregor"
-    },
-    {
-      "source": "trapped in a difficult situation",
-      "translation": "어려운 상황에 갇혀 있다",
-      "notes": "Metaphorical and literal entrapment"
-    },
-    {
-      "source": "protruding lips",
-      "translation": "튀어나온 입술",
-      "notes": "Physical descriptor of clerk's horror and disgust"
-    },
-    {
-      "source": "trembling shoulders",
-      "translation": "떨리는 어깨",
-      "notes": "Physical manifestation of fear/revulsion"
-    },
-    {
-      "source": "supernatural force",
-      "translation": "초자연적인 힘",
-      "notes": "Desperate hope for miraculous rescue/salvation"
-    },
-    {
-      "source": "lover of women",
-      "translation": "여자를 좋아하는 사람",
-      "notes": "Character trait; susceptible to female persuasion"
-    },
-    {
-      "source": "ridiculously",
-      "translation": "우스꾽스럽게",
-      "notes": "Absurd manner; darkly comic"
+      "notes": "Literary sound effect simile"
     },
     {
       "source": "banister",
       "translation": "난간",
-      "notes": "Stairway railing"
+      "notes": "Staircase railing as boundary marker"
     },
     {
-      "source": "numerous little legs",
-      "translation": "수많은 작은 다리들",
-      "notes": "Multiple insect legs; maintains ambiguity"
+      "source": "drive back",
+      "translation": "내쫓다",
+      "notes": "Violent expulsion action"
     },
     {
-      "source": "solid ground",
-      "translation": "단단한 땅",
-      "notes": "Stable foundation; legs functioning properly"
+      "source": "entrance hall",
+      "translation": "현관홀",
+      "notes": "Liminal space between rooms and escape"
     },
     {
-      "source": "snapping in the air with his jaws",
-      "translation": "공중에서 턱으로 딱딱거리다",
-      "notes": "Involuntary insect behavior"
+      "source": "double doors",
+      "translation": "쌍짝문",
+      "notes": "Architectural barrier"
+    },
+    {
+      "source": "flank scraped",
+      "translation": "옆구리가 벗겨지다",
+      "notes": "Visceral injury description"
     },
     {
       "source": "hissing noises",
-      "translation": "쉘쉘거리는 소리",
-      "notes": "Father's animalistic sounds driving Gregor back"
-    },
-    {
-      "source": "like a wild man",
-      "translation": "야생 동물처럼",
-      "notes": "Father's dehumanizing behavior towards son"
-    },
-    {
-      "source": "lethal blow",
-      "translation": "치명적인 타격",
-      "notes": "Threat of deadly violence from father"
-    },
-    {
-      "source": "unbearable hissing",
-      "translation": "참을 수 없는 쉘쉘거리는 소리",
-      "notes": "Psychological torment from father's sounds"
-    },
-    {
-      "source": "vile brown flecks",
-      "translation": "더러운 갈색 얼룩",
-      "notes": "Stains left on white door from Gregor's injury"
-    },
-    {
-      "source": "stuck fast",
-      "translation": "꼼짝 못하고",
-      "notes": "Unable to move, wedged in doorway"
-    },
-    {
-      "source": "hung quivering in the air",
-      "translation": "공중에 떨리며 매달려",
-      "notes": "Legs helplessly dangling"
-    },
-    {
-      "source": "pressed painfully against the ground",
-      "translation": "고통스럽게 땅에 눈려",
-      "notes": "Other legs compressed against floor"
-    },
-    {
-      "source": "hefty shove",
-      "translation": "강력한 밀침",
-      "notes": "Father's violent push that frees and injures Gregor"
-    },
-    {
-      "source": "heavily bleeding",
-      "translation": "심하게 피를 흘리며",
-      "notes": "Gregor's injury from doorway scraping"
-    },
-    {
-      "source": "deep into his room",
-      "translation": "방 깊숙이",
-      "notes": "Forced re-entry; deeper isolation"
-    },
-    {
-      "source": "slammed shut with the stick",
-      "translation": "지팡이로 쿡 닫혀졌다",
-      "notes": "Violent door closure; final seal"
+      "translation": "쉬익거리는 소리",
+      "notes": "Onomatopoetic dehumanizing sound from father"
     }
   ]
 }

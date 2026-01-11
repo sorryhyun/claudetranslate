@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "chunk_index": 1,
+  "translated": true,
+  "target_language": "korean",
+  "terms": [
+    {
+      "source": "Gregor Samsa",
+      "translation": "그레고르 잠자",
+      "context": "The protagonist's full name; appears throughout as subject of narrative",
+      "category": "proper_noun",
+      "notes": "Transliterated directly into Korean characters. Maintains consistent proper name format throughout the narrative."
+    },
+    {
+      "source": "vermin",
+      "translation": "벌레",
+      "context": "The unspecified creature Gregor has become; central metaphor for his transformation and degradation",
+      "category": "domain_specific",
+      "notes": "Chosen '벌레' (insect/creature) over '해충' (pest) to maintain the ambiguity and non-specific nature of the creature. This preserves Kafka's deliberate vagueness about what exactly Gregor has become, which is central to the story's surreal power."
+    },
+    {
+      "source": "travelling salesman",
+      "translation": "외판원",
+      "context": "Gregor's occupation; defines his work identity and generates his internal anxiety about obligations",
+      "category": "domain_specific",
+      "notes": "Used '외판원' (traveling salesman/commercial representative) which is the standard Korean term for this period-appropriate occupation. Reflects the professional identity that defines Gregor's existence."
+    },
+    {
+      "source": "armour-like back",
+      "translation": "갑옷 같은 등",
+      "context": "Visual description of Gregor's transformed body; suggests protective shell and vulnerability simultaneously",
+      "category": "technical",
+      "notes": "Uses '갑옷 같은' (armor-like) combined with '등' (back). This preserves the dual imagery of protection and vulnerability that the original conveys."
+    },
+    {
+      "source": "textile samples",
+      "translation": "직물 견본",
+      "context": "Physical merchandise Gregor carries for his profession; spread on his table",
+      "category": "domain_specific",
+      "notes": "Direct translation using '직물' (textile/fabric) and '견본' (sample). Clearly identifies the specific merchandise of his sales profession."
+    },
+    {
+      "source": "chief clerk",
+      "translation": "주임",
+      "context": "Employer's representative who monitors Gregor; symbol of workplace surveillance and authority hierarchy",
+      "category": "domain_specific",
+      "notes": "Used '주임' (chief/supervisor) rather than '과장' (department head) to reflect a middle management position that represents authority without being the highest level. Maintains the hierarchical power dynamic essential to the narrative."
+    },
+    {
+      "source": "transformed",
+      "translation": "변신하다",
+      "context": "Central verb describing Gregor's metamorphosis; used consistently throughout",
+      "category": "technical",
+      "notes": "Used '변신하다' (to transform/metamorphose) as the primary verb for consistency. This conveys both the physical and existential transformation central to the narrative and aligns with the thematic importance emphasized in the context analysis."
+    },
+    {
+      "source": "office assistant",
+      "translation": "사무원",
+      "context": "Junior workplace figure sent to monitor office attendance and report absences to boss",
+      "category": "domain_specific",
+      "notes": "Used '사무원' (office assistant/clerk) to denote a junior workplace position. Maintains the workplace hierarchy and surveillance theme of the narrative."
+    }
+  ]
+}

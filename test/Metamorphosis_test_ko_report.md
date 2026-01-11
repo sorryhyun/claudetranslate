@@ -1,101 +1,109 @@
 # Translation Report
 
 ## Summary
-- **Source**: /home/soryhyun/claudetranslate/test/Metamorphosis_test.txt
-- **Target Language**: Korean (ko)
-- **Output**: /home/soryhyun/claudetranslate/test/Metamorphosis_test_ko.txt
-- **Workspace**: /home/soryhyun/claudetranslate/test/Metamorphosis_test_translate_temp
-- **Total Words (Source)**: 7,083
-- **Total Words (Translated)**: 22,847
-- **Chunks Processed**: 6
+- **Source:** test/Metamorphosis_test.txt
+- **Target Language:** Korean (ko)
+- **Output:** test/Metamorphosis_test_ko.txt
+- **Workspace:** test/Metamorphosis_test_translate_temp/
+- **Total Words (Source):** 7,083
+- **Total Words (Target):** 4,711
+- **Chunks Processed:** 6
 
 ## Quality Metrics
-- **Overall Score**: 9.25/10
-- **Critical Issues**: 0
-- **Warnings**: 5 (minor stylistic suggestions only)
+- **Overall Score:** 8.8/10 (average across all chunks)
+- **Chunk Scores:**
+  - Chunk 1: 9/10 (1 revision applied - time error corrected)
+  - Chunk 2: 9/10 (no revision needed)
+  - Chunk 3: 9/10 (no revision needed)
+  - Chunk 4: 9/10 (no revision needed)
+  - Chunk 5: 8/10 (revisions applied - sentence fragment, double negative, and phrasing issues corrected)
+  - Chunk 6: 9/10 (no revision needed)
+- **Critical Issues Found:** 4 (all corrected)
+- **Warnings:** 12 (minor stylistic suggestions)
 
-### Per-Chunk Scores
-| Chunk | Score | Critical Issues | Warnings |
-|-------|-------|-----------------|----------|
-| 1 | 9.0/10 | 0 | 0 |
-| 2 | 9.5/10 | 0 | 0 |
-| 3 | 9.5/10 | 0 | 4 |
-| 4 | 9.5/10 | 0 | 0 |
-| 5 | 9.5/10 | 0 | 1 |
-| 6 | 9.0/10 | 0 | 0 |
+## Revisions Applied
+
+### Chunk 1
+- **Time error corrected:** "거의 7시 15분 가까이" changed to "거의 7시 15분 전" to correctly translate "quarter to seven" (6:45, not 7:15)
+- **Register improvement:** "다 지옥에나 가버려!" changed to "모두 지옥에나 가버리라지!" for more formal-literary consistency
+- **Nuance preservation:** "멋진 금빛 액자에 걸려 있었다" changed to "멋진 금빛 액자에 넣어져 걸려 있었다" to capture "housed in" nuance
+
+### Chunk 5
+- **Sentence fragment fixed:** "그들이 더 이상 그의 말을 알아듣지 못한다는 것이었다" changed to "그들은 더 이상 그의 말을 알아듣지 못했다"
+- **Double negative corrected:** "사무실에서 제 편을 들지 않지 마십시오" changed to "사무실에서 저에게 불리하게 하지 마십시오"
+- **Chair movement clarified:** "의자를 가지고 천천히 문 쪽으로 밀고 갔다" changed to "의자에 의지하여 천천히 문 쪽으로 나아갔다"
+- **Vocabulary improvements:** "강력한 가슴" to "억센 가슴", "칼" to "군도"
 
 ## Terminology Glossary
 
-| Source Term | Translation | Notes |
-|-------------|-------------|-------|
-| vermin | 해충 | Preserves Kafka's deliberate ambiguity about the exact creature type |
-| armour-like back | 갑옷 같은 등 | Literal translation preserving hard shell imagery |
-| travelling salesman | 외판원 | Standard Korean term for commercial traveler |
-| textile samples | 직물 견본 | Professional detail for Gregor's work samples |
-| chief clerk | 지배인 | Senior workplace authority figure representing institutional power |
-| little legs | 작은 다리들 | Multiple insect legs, maintains ambiguity |
-| lower part of his body | 몸의 아래 부분 | Deliberately vague anatomical reference |
-| voice of an animal | 동물의 목소리 | Pivotal revelation moment - transformation becomes audible |
-| firm footsteps | 단호한 발걸음 | Repeated descriptor for decisive, authoritative movement |
-| locksmith | 자물쇠 수리공 | Emergency service called to break into locked room |
-| adhesive on the tips of his legs | 다리 끝의 접착력 | Insect body feature enabling him to grip door |
-| brown fluid | 갈색 액체 | Disturbing biological detail, deliberately vague |
-| hissing noises | 쉿쉿거리는 소리 | Father's animalistic sounds driving Gregor back |
-| banister | 난간 | Stairway railing |
-| hefty shove | 강력한 밀침 | Father's violent push that frees and injures Gregor |
-
-*Full glossary contains 72 terms - see glossary.json for complete list*
+| Source Term | Korean Translation | Notes |
+|-------------|-------------------|-------|
+| Gregor Samsa | 그레고르 잠자 | Protagonist's name - transliterated directly |
+| vermin | 벌레 | General creature term maintaining Kafka's intentional ambiguity |
+| travelling salesman | 외판원 | Period-appropriate occupation term |
+| armour-like back | 갑옷 같은 등 | Preserves protective/vulnerable imagery |
+| textile samples | 직물 견본 | Merchandise of his trade |
+| chief clerk | 주임 | Middle management supervisor |
+| transformed | 변신하다 | Central thematic verb |
+| office assistant | 사무원 | Junior workplace position |
+| little legs | 작은 다리들 | Diminutive emphasizing loss of human form |
+| squeaking | 끽끽거리는 소리 | Onomatopoeia for insect-like vocal distortion |
+| occupational hazard | 직업상 위험 | Formal business terminology |
+| fretsaw | 실톱 | Specialized hobby tool |
+| commerce | 상업 | Business sector context |
+| train timetables | 열차 시간표 | Symbol of work obsession |
+| voice of an animal | 동물의 목소리 | Critical revelation moment |
+| locksmith | 자물쇠 수리공 | Working-class tradesperson |
+| adhesive on legs | 다리 끝의 접착성 분비물 | Clinical biological feature |
+| brown fluid | 입에서 흘러나온 갈색 액체 | Visceral deterioration detail |
+| entrance hall | 현관홀 | Liminal space |
+| double doors | 쌍짝문 | Architectural barrier |
+| hissing noises | 쉬익거리는 소리 | Onomatopoetic dehumanizing sound |
 
 ## Translation Notes
 
-### Key Decisions Made During Translation
+### Stylistic Approach
+- **Deadpan tone preserved:** Kafka's matter-of-fact narration of impossible events maintained throughout
+- **Stream of consciousness:** Long, meandering internal monologues flow naturally in Korean
+- **Tragicomic balance:** Physical comedy and existential horror carefully balanced
+- **Temporal precision:** All exact time references (6시 반, 7시 15분 전, 5시, 7시) maintained to build mounting pressure
 
-1. **Creature Ambiguity**: Used "해충" (vermin/pest) rather than specific insect terms to preserve Kafka's deliberate vagueness about Gregor's transformed form.
+### Cultural Adaptations
+- **Work hierarchy:** Korean business terminology (주임, 사무원, 외판원) reflects appropriate hierarchical relationships
+- **Family dynamics:** Speech levels appropriately differentiated for mother (gentle), father (stern), sister (plaintive)
+- **Debt/obligation theme:** Concept of being in debt to employer (고용주에게 빚을 지고 있다) carries strong cultural resonance in Korean context
+- **European elements:** Train schedules, business trips, insurance company details preserved without excessive localization
 
-2. **Literary Register**: Maintained formal literary Korean (문어체) throughout, appropriate for serious modernist fiction.
-
-3. **Honorific System**: Deployed Korean speech levels to convey social hierarchy:
-   - Chief clerk: Formal condescension
-   - Mother: Gentle concern
-   - Father: Authoritative to violent
-   - Sister: Plaintive worry
-   - Gregor: Excessive deference despite crisis
-
-4. **Cultural Resonance**: Themes of filial duty, workplace hierarchy, and debt obligation resonate naturally with Korean cultural values, requiring no adaptation.
-
-5. **Kafkaesque Tone**: Preserved the tragicomic absurdism where bureaucratic concerns override impossible physical crisis.
-
-6. **Sentence Structure**: Maintained Kafka's long, complex sentences where natural in Korean, using connecting particles to preserve psychological flow.
-
-7. **Time Notation**: Used Korean time format (6시 반, 7시 15분 전) for natural reading while preserving temporal urgency.
+### Key Translation Decisions
+1. **"Vermin" as 벌레:** Chose general creature term over specific insect (곤충) or pest (해충) to maintain Kafka's deliberate ambiguity
+2. **Formal register in dialogue:** Chief clerk's bureaucratic language uses appropriate formal Korean
+3. **Physical descriptions:** Clinical precision maintained for grotesque transformations (adhesive secretions, brown fluid, scraped flank)
+4. **Emotional restraint:** Family reactions rendered with Germanic restraint rather than adding Korean emotional expressiveness
 
 ## Verification Summary
+All 6 chunks were verified by independent verifier agents. Quality scores ranged from 8/10 to 9/10. Critical issues in chunks 1 and 5 were identified and automatically corrected during the verification phase.
 
-All six chunks received high quality scores (9.0-9.5/10). The verification process identified:
+**Common strengths across all chunks:**
+- Excellent glossary term consistency
+- Strong preservation of Kafka's distinctive style
+- Natural Korean flow while maintaining literary quality
+- Appropriate handling of Korean honorifics and speech levels
 
-**No Critical Issues**: The translation is publication-ready without required corrections.
-
-**Minor Warnings** (optional improvements):
-- Minor time notation preferences (literary vs. literal)
-- Occasional alternative phrasings that could flow slightly more naturally
-- Borrowed term "바리케이드" noted but accepted as preserving militaristic accusatory tone
-
-**Strengths Consistently Noted**:
-- Perfect semantic accuracy throughout
-- Excellent terminology consistency (72 terms established and maintained)
-- Superior preservation of Kafkaesque psychological depth
-- Masterful use of Korean honorific system for social dynamics
-- Cultural appropriateness for Korean readers
-- Literary quality matching original sophistication
+**Minor warnings noted (not requiring revision):**
+- Occasional full name usage where original uses only first name
+- Some minor word order variations possible
+- Optional vocabulary improvements suggested
 
 ## Workspace Files
+All intermediate files are preserved in: `test/Metamorphosis_test_translate_temp/`
+- Context analysis: `context/context_analysis.md`
+- Source chunks: `chunks/source/chunk_001.txt` through `chunk_006.txt`
+- Summaries: `chunks/summaries/summary_001.md` through `summary_006.md`
+- Chunk glossaries: `chunks/glossaries/glossary_001.json` through `glossary_006.json`
+- Translations: `chunks/translations/translation_001.md` through `translation_006.md`
+- Verifications: `chunks/verifications/verification_001.md` through `verification_006.md`
+- Master glossary: `glossary.json`
+- Job manifest: `manifest.json`
 
-All intermediate files are preserved in: `/home/soryhyun/claudetranslate/test/Metamorphosis_test_translate_temp/`
-
-- **Context analysis**: `context/context_analysis.md`
-- **Source chunks**: `chunks/source/chunk_001.txt` through `chunk_006.txt`
-- **Summaries**: `chunks/summaries/summary_001.md` through `summary_006.md`
-- **Translations**: `chunks/translations/translation_001.md` through `translation_006.md`
-- **Verifications**: `chunks/verifications/verification_001.md` through `verification_006.md`
-- **Glossary**: `glossary.json`
-- **Manifest**: `manifest.json`
+---
+*Generated by Claude Translate Plugin*

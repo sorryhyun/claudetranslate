@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "chunk_index": 6,
+  "translated": true,
+  "target_language": "korean",
+  "terms": [
+    {
+      "source": "chief clerk",
+      "translation": "주임",
+      "context": "The employer's representative who flees in panic, triggering the violent climax; represents authority and employment that rejects Gregor",
+      "category": "proper_noun",
+      "notes": "주임 (chief clerk/department head) is used rather than 과장 (section chief) as it better represents the hierarchical business position - the clerk is the employer's direct representative with authority over Gregor's employment"
+    },
+    {
+      "source": "banister",
+      "translation": "난간",
+      "context": "The staircase railing that the chief clerk clings to before leaping down; represents the boundary between Gregor's world and escape",
+      "category": "domain_specific",
+      "notes": "난간 is the standard Korean term for staircase railing/banister; conveys both the physical structure and the literal boundary"
+    },
+    {
+      "source": "vermin/insect form",
+      "translation": "벌레",
+      "context": "Explicitly observed here through the chief clerk's terrified reaction and Gregor's use of 'numerous little legs'",
+      "category": "technical",
+      "notes": "벌레 (creature/bug) is preferred over 해충 (pest) or 곤충 (insect) to maintain Kafka's ambiguity about what Gregor has become - it's a general, non-specific creature reference that conveys the horror and alienation"
+    },
+    {
+      "source": "drive Gregor back",
+      "translation": "그레고르를 내쫓다",
+      "context": "The father's violent action using stick and newspaper to force Gregor back into confinement; central action of this chunk",
+      "category": "idiom",
+      "notes": "내쫓다 captures both the literal action of driving/forcing back and the idiomatic sense of expulsion and rejection, conveying the father's violent enforcement of boundaries"
+    },
+    {
+      "source": "entrance hall/landing",
+      "translation": "현관홀",
+      "context": "Liminal space where Gregor makes final attempt to catch the chief clerk before being driven back",
+      "category": "domain_specific",
+      "notes": "현관홀 (entrance hall/foyer) captures the liminal space between Gregor's room and escape - 현관 alone means entrance, while 홀 emphasizes the open space quality"
+    },
+    {
+      "source": "doubled doors",
+      "translation": "쌍짝문",
+      "context": "The doorway becomes an architectural barrier Gregor cannot pass through without injury; his body is too broad",
+      "category": "domain_specific",
+      "notes": "쌍짝문 (double doors) literally means paired/double doors in Korean, capturing both the physical architecture and the doubling of the barrier"
+    },
+    {
+      "source": "flank scraped",
+      "translation": "옆구리가 벗겨지다",
+      "context": "Visceral injury where Gregor's body is damaged against the white door, leaving brown flecks; marks physical violence",
+      "category": "technical",
+      "notes": "옆구리가 벗겨지다 (flank scraped/flayed) conveys the visceral damage and injury, using 벗겨지다 (to be scraped/peeled) which is more evocative of the injury than simpler terms"
+    },
+    {
+      "source": "hissing noises",
+      "translation": "쉬익거리는 소리",
+      "context": "The father's sound reduced to animal-like hissing while driving Gregor back; dehumanizing aggression",
+      "category": "idiom",
+      "notes": "쉬익거리는 소리 (hissing sounds) uses an onomatopoetic form in Korean that captures the animal-like, dehumanizing quality of the father's aggression - reduced to pure sounds rather than language"
+    }
+  ]
+}

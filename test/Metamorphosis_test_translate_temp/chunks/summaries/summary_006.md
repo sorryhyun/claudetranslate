@@ -1,29 +1,28 @@
 ## Chunk 6 Summary
 
 ### Brief Summary
-The chief clerk attempts to flee in panic after seeing Gregor's transformed state, but Gregor pursues him in a desperate attempt to save his job and family's financial future. The chase triggers a violent family response—Gregor's father drives him back toward his room with a stick and newspaper while the mother opens windows in shock, ultimately forcing Gregor through the doorway with painful injury before slamming the door shut, leaving silence.
+The chief clerk flees in panic down the stairs, triggering a violent response from Gregor's father who drives Gregor back toward his room with the chief clerk's stick and a newspaper, forcing him into the doorway where his body is painfully scraped and bruised before being shoved inside and shut away. This scene represents the complete breakdown of Gregor's attempt to maintain his role as dutiful worker and family provider, culminating in physical violence and total separation from the household.
 
 ### Key Terms in This Section
-- **chief clerk**: Authority figure whose reaction to Gregor determines job security; flees in panic, representing societal rejection of Gregor's condition
-- **protruding lips, trembling shoulders**: Physical descriptors of the clerk's horror and disgust
-- **banister**: Central location where clerk hesitates before fleeing down stairs
-- **father's stick, newspaper**: Weapons used to drive Gregor back—represent paternal authority turning violent
-- **hissing noises**: Father's animalistic response; creates confusion for Gregor as he tries to move backwards
-- **doorway, double doors**: Physical barrier preventing Gregor's passage; narrow space that injures him
-- **numerous little legs**: Gregor's insect body parts; he discovers they function better than expected, giving brief hope
-- **coffee pot knocked over**: Accidental domestic disruption; mother's panic causes her to spill coffee
-- **heavily bleeding, deep into his room**: Injury result; Gregor is forcibly expelled with violence
+- **chief clerk**: The employer's representative whose frightened flight signals the definitive end of Gregor's hope to preserve his job and status
+- **banister**: The staircase railing representing Gregor's inability to prevent the clerk's escape despite his desperate pursuit
+- **stick/newspaper**: Tools of violence used by Gregor's father; weapons of rejection and forced isolation
+- **entrance hall/landing**: Liminal spaces where Gregor attempts one final time to connect with the outside world before being violently excluded
+- **little legs**: Despite Gregor's momentary relief at their functionality, they ultimately serve as instruments of humiliation rather than agency
+- **carpet/coffee pot**: Domestic objects knocked over in chaos, symbolizing the destruction of family normalcy
+- **double doors**: Architectural barrier emphasizing how Gregor's body no longer fits the human space designed for him
+- **flank scraped on white door**: Visceral injury marking the violent boundary between Gregor's attempted inclusion and forced exclusion
+- **heavily bleeding**: The culmination of physical trauma, a final grotesque image as Gregor is literally cast out
 
 ### Connections
-- **Continues from**: Previous chunk established the chief clerk's arrival to collect payment; Gregor's hope to persuade him now leads to this confrontation scene
-- **Sets up**: The door slamming shut and silence suggests a turning point—Gregor is now isolated from the family and external world; establishes the claustrophobic containment that will dominate later sections
+- Continues from: Chunk 5 established Gregor's failed attempt to convince the chief clerk of his continued work capacity; this chunk shows the violent rejection of that plea
+- Sets up: The aftermath of this assault (not included in excerpt) where Gregor retreats, wounded and isolated, beginning the second phase of the novella focusing on his slow decline
 
 ### Translation Notes
-- **Directional language precision**: Kafka uses specific spatial terms (entrance hall, doorway, landing, stairs, staircase). Translator must maintain precise Korean spatial vocabulary to preserve the sense of trapped movement
-- **Animalistic behavior**: Father's "hissing noises" and Gregor's physical desperation introduce animalistic imagery—important to convey the dehumanization theme without being crude
-- **Family response differentiation**: Mother screams and flees; father becomes violent; each response reflects different family adaptation to crisis. Speech levels in Korean should reflect each character's emotional state
-- **Physical description detail**: Gregor's body scraping the doorway, blood, quivering legs—Kafka's clinical, almost entomological precision here must translate to Korean without becoming gratuitously gruesome
-- **Temporal markers**: "For the first time that day" suggests earlier failed attempts to move that aren't detailed; translator should recognize this narrative compression
-- **Emotional contradiction**: Gregor feels "alright with his body" briefly despite the desperate situation—preserves Kafkaesque absurdism; tone should convey simultaneous relief and horror
-- **Dialogue embedded in action**: Mother's "Help, for pity's sake, Help!" and Gregor's gentle "Mother, mother" occur within intense physical action—dialogue structure and emotional register shift needed in Korean
-- **Psychophysical fusion**: The passage blends Gregor's psychological crisis (protecting his job/family) with his physical struggle (moving in insect form)—long Korean sentences with appropriate clause linking will preserve this fusion
+- The prose here becomes more frantic and visceral, with shorter sentences reflecting urgency and chaos; this stylistic shift must be preserved in Korean
+- Gregor's moment of physical relief ("began to feel alright with his body") is quickly undercut by horror—this rapid emotional swing is crucial to maintain
+- The father's violence escalates from driving-back gestures to hissing and weapon-use; this escalation should feel inevitable rather than sudden
+- The mother's panicked response (opening window, fleeing) contrasts with her earlier fainting—show her increasing helplessness through action rather than passive collapse
+- The detailed description of Gregor's body getting stuck at the doorway (physical dimensions, angles, quivering legs) is simultaneously pathetic and horrifying; clinical precision maintains Kafka's tone
+- The final image "heavily bleeding" and the slamming door followed by silence provides a traumatic punctuation—the peace that follows violence
+- Father's "hissing" is a particularly dehumanizing sound choice by Kafka; convey this as reducing the father to something subhuman in his aggression, mirroring Gregor's own metamorphosis

@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "chunk_index": 3,
+  "translated": true,
+  "target_language": "korean",
+  "terms": [
+    {
+      "source": "chief clerk",
+      "translation": "주임",
+      "context": "Corporate authority figure who visits the Samsa apartment to investigate Gregor's absence from work; represents employer scrutiny and rigid business hierarchy",
+      "category": "proper_noun",
+      "notes": "Following context analysis suggestion; 주임 (department chief/manager) is appropriate for early 20th century hierarchical business context"
+    },
+    {
+      "source": "fretsaw",
+      "translation": "실톱",
+      "context": "A hobby tool used by Gregor for craftsmanship; mentioned by mother as evidence of his dedication and skill",
+      "category": "domain_specific",
+      "notes": "Translated as 실톱 (coping saw/fretsaw); context analysis acknowledges this is a specialized tool that may require cultural context but translation is preferred"
+    },
+    {
+      "source": "commerce",
+      "translation": "상업",
+      "context": "Business context invoked by the chief clerk when explaining that those in commerce must overcome illness due to business obligations",
+      "category": "domain_specific",
+      "notes": "Standard business Korean term; 상업 conveys the commercial/business sector context"
+    },
+    {
+      "source": "travelling salesman",
+      "translation": "외판원",
+      "context": "Gregor's profession; establishes his occupation and work responsibilities that create pressure and obligation",
+      "category": "domain_specific",
+      "notes": "Follows context analysis suggestion of 외판원 as period-appropriate occupation; indicates traveling salesman role"
+    },
+    {
+      "source": "train timetables",
+      "translation": "열차 시간표",
+      "context": "Referenced as part of Gregor's leisure activities; emphasizes the pervasiveness of work-related thinking in his daily life",
+      "category": "domain_specific",
+      "notes": "Direct translation; 열차 (train) + 시간표 (timetable) reflects Gregor's obsession with schedules and work obligations"
+    },
+    {
+      "source": "elastic",
+      "translation": "탄력 있는",
+      "context": "Descriptor applied to Gregor's back when describing the resilience of his transformed body as it hits the carpet",
+      "category": "technical",
+      "notes": "Uses 탄력 있는 (elastic/springy) to describe the physical quality of Gregor's insect carapace absorbing impact with resilience"
+    }
+  ]
+}

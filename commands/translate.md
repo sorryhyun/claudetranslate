@@ -143,9 +143,9 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
     Use the **split_text MCP tool** `mcp__plugin_claude-translate_translator__split_text`:
     - `source_file_path`: Path to source document
     - `output_dir`: Path to workspace directory
-    - `target_words`: 1000
-    - `min_words`: 500
-    - `max_words`: 1500
+    - `target_words`: 2000
+    - `min_words`: 1500
+    - `max_words`: 2500
 
     The tool:
     - Creates individual chunk files: `chunks/source/chunk_001.txt`, etc.

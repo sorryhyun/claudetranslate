@@ -1,25 +1,23 @@
-## Chunk 4 Summary
+## Chunk 004 Summary
 
 ### Brief Summary
-The chief clerk confronts Gregor through the locked door, demanding explanation for his absence and threatening his job security. Gregor attempts to respond and physically attempts to open the door, but when his voice is heard—clearly transformed into "the voice of an animal"—the family realizes the gravity of his condition and they rush to call a doctor and locksmith.
+Gregor panics and makes excuses about illness to the chief clerk while desperately attempting to leave his bed and open the door. His family recognizes his transformed voice as inhuman, and his father summons a locksmith while his mother and sister rush out to find a doctor, leaving the front door open in their panic.
 
 ### Key Terms in This Section
-- **chief clerk**: Authority figure acting as employer's representative, demanding accountability; speaks with formal condescension
-- **voice of an animal**: Crucial moment of revelation—Gregor's transformation becomes physically apparent through speech rather than sight
-- **turnover/business duties**: References to Gregor's job performance and commercial responsibilities
-- **dizziness/unwell**: Gregor's attempt to rationalize his condition with conventional illness excuse
-- **eight o'clock train**: Recurring time marker representing Gregor's work obligations
-- **incomprehensible stubbornness**: Chief clerk's misinterpretation of Gregor's silence as defiance
+- chief clerk: The employer's representative who has come to investigate Gregor's absence and monetary accountability
+- business duties/turnover: Gregor's professional obligations and sales performance being scrutinized
+- eight o'clock train: Specific temporal anchor suggesting Gregor's usual work schedule and his desperate attempt to maintain normalcy
+- attack of dizziness: The false excuse Gregor invents to explain his inability to appear
+- voice of an animal: The crucial moment when family and clerk recognize that Gregor's voice has become inhuman, confirming transformation
 
 ### Connections
-- **Continues from**: Gregor's anxious interior monologue about his sister's concerns and family obligations; shifts from internal perspective to external pressure when chief clerk raises his voice
-- **Sets up**: Family's collective realization of crisis; transition from denial to urgent action (calling doctor and locksmith); escalation of panic and emotional responses
+- Continues from: Previous tension of family waiting outside, chief clerk's arrival, Gregor's internal debate about opening the door
+- Sets up: Escalating family crisis response (calling doctor, locksmith), physical attempts to force entry or unlock door, revelation of Gregor's monstrous state to multiple witnesses
 
 ### Translation Notes
-- The chief clerk's speech requires marked formality and condescension in Korean (극존칭 mixed with dismissive tone) to contrast with Gregor's deferential response
-- "Voice of an animal" is the pivotal sensory revelation—must convey shock and wrongness while remaining descriptive
-- Gregor's rambling excuses show internal panic beneath surface politeness; Korean should capture this tension between honorific speech and incoherent reasoning
-- The phrase about sliding down the drawers and finally standing upright shows physical struggle—translate with clinical detail matching Kafka's style
-- Family members' exclamations ("Oh, God!", "Mother?", "Grete!") are rapid, fragmented—preserve this in Korean to show emotional chaos
-- The chief clerk's calm observation contrasting with the mother's screams creates dark irony; maintain this tonal contrast
-- Note the open door at the end (symbolic barrier breaking down) and the cultural detail about leaving it open in times of crisis
+- Gregor's rushed, breathless dialogue ("But Sir", "Just a moment", "Be patient!") should convey panic and physical effort; use appropriate Korean conversational markers
+- The chief clerk's formal accusations (about money entrusted, unsatisfactory turnover, business failures) use business Korean terminology - maintain bureaucratic tone
+- Mother's shift from concern to realization ("he could be seriously ill and we're making him suffer") shows emotional escalation - use appropriate Korean family speech levels
+- Key phrase "voice of an animal" (line 84) is the turning point: this is the moment of recognition - handle with gravitas
+- Father's rapid command "get a locksmith here, now!" should convey urgent authority with appropriate honorific Korean imperative forms
+- Preserve the specific time reference "eight o'clock train" - maintains mounting temporal pressure throughout narrative

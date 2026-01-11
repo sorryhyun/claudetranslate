@@ -37,9 +37,9 @@ def split_paragraph_into_sentences(text: str) -> List[str]:
 
 def create_chunks(
     text: str,
-    target_words: int = 1000,
-    min_words: int = 500,
-    max_words: int = 1500
+    target_words: int = 2000,
+    min_words: int = 1500,
+    max_words: int = 2500
 ) -> List[Dict[str, Any]]:
     """
     Split text into chunks of approximately target_words size.

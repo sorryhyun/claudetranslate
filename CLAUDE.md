@@ -56,6 +56,13 @@ The `mcp/` directory contains the MCP server with modular tool loading. Each too
 
 The server auto-discovers tool groups at startup via `_load_tool_groups()` in `mcp.py`.
 
+### Hook System
+
+The `scripts/` directory contains shell scripts triggered by Claude Code hooks:
+
+- `apply_output_style.sh` - PostToolUse hook after `init_workspace` that injects target language style as additional context
+- `phase_check.sh` - Stop hook that reads manifest via `/tmp/claude_translate_manifest.json` symlink to block stopping mid-translation, prompting user to `/compact` and continue
+
 ### Agent System
 
 Agents in `agents/` are markdown files with YAML frontmatter. All agents have access to `Read` and `Write` tools and work with file paths:
@@ -94,6 +101,7 @@ The filename (without `.md`) is the language identifier. Language codes are mapp
 - `commands/translate.md` - Main orchestration logic (6-phase pipeline)
 - `agents/*.md` - 5 specialized agents (context-analyzer, summarizer, glossary-translator, translator, verifier)
 - `styles/*.md` - 19 supported language styles with metadata
+- `scripts/*.sh` - Hook scripts for style injection and phase continuation
 - `.mcp.json` - MCP server configuration
 
 ## Usage
