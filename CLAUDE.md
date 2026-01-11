@@ -24,25 +24,27 @@ The `/translate` command creates a workspace directory next to the source file:
 ```
 source_translate_temp/
 ├── manifest.json           # Job state and chunk metadata
-├── glossary.json           # Running terminology glossary
+├── glossary.json           # Merged terminology glossary (after Phase 3)
 ├── context/
 │   └── context_analysis.md
 └── chunks/
     ├── source/             # chunk_001.txt, chunk_002.txt, ...
     ├── summaries/          # summary_001.md, ...
+    ├── glossaries/         # glossary_001.json, ... (per-chunk glossaries)
     ├── translations/       # translation_001.md, ...
     └── verifications/      # verification_001.md, ...
 ```
 
-All agents receive file paths (not text content) and write their output to files. The `manifest.json` tracks job state across all 5 pipeline phases.
+All agents receive file paths (not text content) and write their output to files. The `manifest.json` tracks job state across all 6 pipeline phases.
 
-### Translation Pipeline (5 Phases)
+### Translation Pipeline (6 Phases)
 
 1. **Setup, Context Analysis, and Text Splitting** - Main agent parses args, inits workspace, spawns `context-analyzer` agent, and splits text via MCP tools
-2. **Summarization** - `summarizer` agents write to `chunks/summaries/` (parallel, batches of 5)
-3. **Translation** - `translator` agents write to `chunks/translations/` (parallel, batches of 5)
-4. **Verification** - `verifier` agents write to `chunks/verifications/` (parallel, optional)
-5. **Assembly** - `assemble_translation` MCP tool combines chunks into final output
+2. **Summarization** - `summarizer` agents write to `chunks/summaries/` and extract terms to `chunks/glossaries/` (parallel, batches of 5)
+3. **Glossary Translation** - `glossary-translator` agents translate per-chunk glossaries in parallel, then merge into `glossary.json`
+4. **Translation** - `translator` agents read pre-translated `glossary.json` and write to `chunks/translations/` (parallel, batches of 5)
+5. **Verification** - `verifier` agents write to `chunks/verifications/` (parallel, optional)
+6. **Assembly** - `assemble_translation` MCP tool combines chunks into final output
 
 ### MCP Server
 
@@ -61,7 +63,8 @@ Agents in `agents/` are markdown files with YAML frontmatter. All agents have ac
 | Agent | Model | Purpose |
 |-------|-------|---------|
 | `context-analyzer` | sonnet | Document domain/tone/terminology analysis |
-| `summarizer` | haiku | Chunk summarization for context |
+| `summarizer` | haiku | Chunk summarization and term extraction |
+| `glossary-translator` | haiku | Glossary term translation |
 | `translator` | sonnet | Translation execution |
 | `verifier` | sonnet | Quality verification |
 
@@ -88,7 +91,8 @@ The filename (without `.md`) is the language identifier. Language codes are mapp
 
 ### Key Files
 
-- `commands/translate.md` - Main orchestration logic (5-phase pipeline)
+- `commands/translate.md` - Main orchestration logic (6-phase pipeline)
+- `agents/*.md` - 5 specialized agents (context-analyzer, summarizer, glossary-translator, translator, verifier)
 - `styles/*.md` - 19 supported language styles with metadata
 - `.mcp.json` - MCP server configuration
 

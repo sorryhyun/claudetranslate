@@ -30,6 +30,7 @@ def handle(arguments: Dict[str, Any]) -> Dict[str, Any]:
     os.makedirs(os.path.join(workspace_dir, "context"), exist_ok=True)
     os.makedirs(os.path.join(workspace_dir, "chunks", "source"), exist_ok=True)
     os.makedirs(os.path.join(workspace_dir, "chunks", "summaries"), exist_ok=True)
+    os.makedirs(os.path.join(workspace_dir, "chunks", "glossaries"), exist_ok=True)
     os.makedirs(os.path.join(workspace_dir, "chunks", "translations"), exist_ok=True)
     os.makedirs(os.path.join(workspace_dir, "chunks", "verifications"), exist_ok=True)
 
@@ -71,6 +72,7 @@ def handle(arguments: Dict[str, Any]) -> Dict[str, Any]:
             "context_analysis": {"status": "pending"},
             "text_splitting": {"status": "pending"},
             "summarization": {"status": "pending"},
+            "glossary_translation": {"status": "pending"},
             "translation": {"status": "pending"},
             "verification": {"status": "pending" if not skip_verify else "skipped"},
             "assembly": {"status": "pending"}

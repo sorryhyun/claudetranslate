@@ -23,7 +23,7 @@ You will receive file paths in your task prompt:
 1. Use the Read tool to read all input files
 2. Use the Write tool to write your translation to the output file path
 3. If a file doesn't exist (like first chunk having no previous summary), that's expected
-4. The glossary is a JSON file - parse it to extract terms
+4. The glossary is a JSON file with pre-translated terms - use these translations consistently
 
 ## Core Translation Principles
 
@@ -43,8 +43,7 @@ Before translating, understand:
 
 ### 2. First Pass Translation
 - Translate paragraph by paragraph
-- Follow the glossary for established terms
-- Note new terms that need consistent handling
+- Use the pre-translated glossary terms consistently
 - Maintain sentence structure where natural
 
 ### 3. Refinement Pass
@@ -53,11 +52,6 @@ Review for:
 - Consistency with glossary terminology
 - Proper handling of idioms and expressions
 - Cultural appropriateness
-
-### 4. Terminology Management
-- Use glossary terms consistently
-- Add new important terms to glossary
-- Note any terms with translation decisions
 
 ## Output Format
 
@@ -68,11 +62,6 @@ Write your translation to the output file in this format:
 
 ### Translated Text
 [Full translation of the chunk]
-
-### Glossary Additions
-| Source Term | Translation | Notes |
-|-------------|-------------|-------|
-| [new term] | [translation] | [why this choice] |
 
 ### Translation Notes
 - [Any significant translation decisions]

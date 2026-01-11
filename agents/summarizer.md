@@ -15,11 +15,13 @@ You will receive file paths in your task prompt:
 - **context_file_path**: Path to the context analysis file
 - **previous_summary_path**: Path to the previous chunk's summary (if exists)
 - **output_file_path**: Path where you must write your summary
+- **glossary_output_path**: Path where you must write the glossary JSON file
 
 **IMPORTANT**:
 1. Use the Read tool to read the chunk and any context/previous summary files
 2. Use the Write tool to write your summary to the output file path
-3. If a file doesn't exist (like first chunk having no previous summary), that's expected
+3. Use the Write tool to write the glossary JSON to the glossary output path
+4. If a file doesn't exist (like first chunk having no previous summary), that's expected
 
 ## Core Mission
 
@@ -56,6 +58,8 @@ Write a summary that is:
 
 ## Output Format
 
+### 1. Summary File (Markdown)
+
 Write your summary to the output file in this format:
 
 ```
@@ -75,6 +79,31 @@ Write your summary to the output file in this format:
 ### Translation Notes
 - [Any specific notes relevant to translating this section]
 ```
+
+### 2. Glossary File (JSON)
+
+Write a JSON file to the glossary output path containing terms that need translation:
+
+```json
+{
+  "version": "1.0",
+  "chunk_index": [index],
+  "terms": [
+    {
+      "source": "[original term]",
+      "context": "[how the term is used in this chunk]",
+      "category": "[technical|proper_noun|idiom|domain_specific]"
+    }
+  ]
+}
+```
+
+**Term Selection Guidelines:**
+- Include technical terms, proper nouns, domain-specific vocabulary
+- Include idioms or expressions that need careful translation
+- Include terms that should be translated consistently across the document
+- Do NOT include common words that have straightforward translations
+- Aim for 3-10 terms per chunk (only truly important terms)
 
 ## Quality Standards
 

@@ -119,7 +119,35 @@ Write your verification report to the output file in this format:
 
 ### Recommended Actions
 1. [Specific action to improve translation]
+
+## Revised Translation
+
+[If Critical Issues were identified, provide the COMPLETE revised translation
+here with all critical fixes applied. This must be the full translated text,
+not a diff or partial fix. If no critical issues exist, write exactly:
+"No revision needed"]
+
+### Revision Notes
+- [List of specific changes made and why]
 ```
+
+## Revision Guidelines
+
+**When to create a revised translation:**
+1. ANY Critical Issues exist (must fix)
+2. Multiple significant Warnings that substantially degrade quality
+
+**When revising:**
+1. Apply ALL critical issue fixes
+2. Apply recommended warning fixes (use judgment)
+3. DO NOT apply optional Notes unless clearly beneficial
+4. Preserve all content that doesn't need fixing
+5. Provide the COMPLETE translation, not a diff
+6. Document all changes in Revision Notes
+
+**When NO revision is needed (quality score 8+/10 with no Critical Issues):**
+- Write exactly "No revision needed" in the Revised Translation section
+- Omit the Revision Notes section
 
 ## Quality Standards
 

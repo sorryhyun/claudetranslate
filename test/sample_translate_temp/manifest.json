@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-11T03:09:40.275521+00:00",
-  "updated_at": "2026-01-11T03:09:40.276299+00:00",
+  "created_at": "2026-01-11T04:45:37.311727+00:00",
+  "updated_at": "2026-01-11T04:45:37.312631+00:00",
   "source": {
     "file_path": "/home/soryhyun/claudetranslate/test/sample.md",
     "word_count": 853
@@ -20,16 +20,19 @@
   "phases": {
     "input_validation": {
       "status": "completed",
-      "completed_at": "2026-01-11T03:09:40.275521+00:00"
+      "completed_at": "2026-01-11T04:45:37.311727+00:00"
     },
     "context_analysis": {
       "status": "completed",
-      "completed_at": "2026-01-11T03:09:40.276299+00:00"
+      "completed_at": "2026-01-11T04:45:37.312631+00:00"
     },
     "text_splitting": {
       "status": "pending"
     },
     "summarization": {
+      "status": "pending"
+    },
+    "glossary_translation": {
       "status": "pending"
     },
     "translation": {
@@ -62,6 +65,8 @@
       ],
       "summary_file": "chunks/summaries/summary_001.md",
       "summary_status": "pending",
+      "glossary_file": "chunks/glossaries/glossary_001.json",
+      "glossary_status": "pending",
       "translation_file": "chunks/translations/translation_001.md",
       "translation_status": "pending",
       "translation_confidence": null,
@@ -85,6 +90,8 @@
       ],
       "summary_file": "chunks/summaries/summary_002.md",
       "summary_status": "pending",
+      "glossary_file": "chunks/glossaries/glossary_002.json",
+      "glossary_status": "pending",
       "translation_file": "chunks/translations/translation_002.md",
       "translation_status": "pending",
       "translation_confidence": null,

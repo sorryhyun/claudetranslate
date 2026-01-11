@@ -206,6 +206,8 @@ def handle(arguments: dict) -> dict:
             "headers": chunk['headers'],
             "summary_file": f"chunks/summaries/summary_{chunk_index:03d}.md",
             "summary_status": "pending",
+            "glossary_file": f"chunks/glossaries/glossary_{chunk_index:03d}.json",
+            "glossary_status": "pending",
             "translation_file": f"chunks/translations/translation_{chunk_index:03d}.md",
             "translation_status": "pending",
             "translation_confidence": None,
