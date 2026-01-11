@@ -1,5 +1,6 @@
 {
   "name": "claude-translate",
   "version": "1.0.0",
-  "description": "Multi-stage document translation pipeline with context-aware agents for high-quality translations. Supports analysis, chunking, summarization, translation, and verification."
+  "description": "Multi-stage document translation pipeline with context-aware agents for high-quality translations. Supports analysis, chunking, summarization, translation, and verification.",
+  "mcpServers": "./.mcp.json"
 }

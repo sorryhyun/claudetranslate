@@ -67,10 +67,31 @@ Agents in `agents/` are markdown files with YAML frontmatter. All agents have ac
 | `translator` | sonnet | Translation execution |
 | `verifier` | sonnet | Quality verification |
 
+### Language Styles
+
+Target languages are configured as output-style markdown files in `styles/`:
+```
+styles/
+├── korean.md
+├── japanese.md
+├── chinese.md
+└── ... (19 languages)
+```
+
+Each style file uses standard Claude Code output-style format:
+```yaml
+---
+name: Korean
+description: Translate to Korean (한국어) - code: ko
+---
+```
+
+The filename (without `.md`) is the language identifier. Language codes are mapped in `commands/translate.md`.
+
 ### Key Files
 
 - `commands/translate.md` - Main orchestration logic (7-phase pipeline)
-- `.claude-plugin/config/languages.json` - 19 supported languages with aliases
+- `styles/*.md` - 19 supported language styles with metadata
 - `.mcp.json` - MCP server configuration
 
 ## Usage

@@ -2,6 +2,12 @@
 description: Translate documents through a multi-stage pipeline with context analysis, chunking, summarization, translation, and verification
 argument-hint: <source-file> --target <language> [--output <file>] [--skip-verify]
 allowed-tools: ["Read", "Write", "Bash", "Glob", "Grep", "TodoWrite", "Task"]
+hooks:
+  Stop:
+    - hooks:
+        - type: command
+          command: "${CLAUDE_PLUGIN_ROOT}/scripts/phase_check.sh"
+          timeout: 5
 ---
 
 # Document Translation Pipeline
@@ -51,11 +57,42 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
    - If file not found, report error and suggest checking the path
 
 4. Validate target language:
-   - Read the languages config from `${CLAUDE_PLUGIN_ROOT}/config/languages.json`
-   - Check if target language (or its alias) is supported
+   - Use Glob to list all style files in `${CLAUDE_PLUGIN_ROOT}/styles/*.md`
+   - Match the target language against file names (without .md extension) or language codes
    - If not supported, list available languages and exit
+   - Use the language code mapping below to get the ISO code:
 
-5. Initialize the workspace using the **init_workspace MCP tool** `mcp__plugin_claude-translate_translator__init_workspace`:
+   **Language Code Mapping:**
+   | Filename | Code |
+   |----------|------|
+   | korean | ko |
+   | japanese | ja |
+   | chinese | zh |
+   | chinese-traditional | zh-TW |
+   | spanish | es |
+   | french | fr |
+   | german | de |
+   | portuguese | pt |
+   | russian | ru |
+   | arabic | ar |
+   | hindi | hi |
+   | vietnamese | vi |
+   | thai | th |
+   | indonesian | id |
+   | italian | it |
+   | dutch | nl |
+   | polish | pl |
+   | turkish | tr |
+   | english | en |
+
+   - Also accept language codes directly (e.g., `ko` → `korean`)
+
+5. Apply output style for target language:
+   - Read the style file from `${CLAUDE_PLUGIN_ROOT}/styles/{target_language}.md`
+   - Internalize the style guidelines for all subsequent responses
+   - This ensures your translation output follows the target language's conventions
+
+6. Initialize the workspace using the **init_workspace MCP tool** `mcp__plugin_claude-translate_translator__init_workspace`:
    - `source_file_path`: Absolute path to source file
    - `target_language`: Full language name (e.g., "korean")
    - `target_language_code`: ISO code (e.g., "ko")
@@ -69,9 +106,15 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
    - `output_path`: Where the final translation will be written
    - `source_word_count`: Word count of source document
 
-6. Store the workspace paths for subsequent phases
+7. Store the workspace paths for subsequent phases
 
-7. Mark Phase 1 as complete in todo list
+8. Create symlink for Stop hook to track manifest:
+   ```bash
+   ln -sf "[manifest_path]" /tmp/claude_translate_manifest.json
+   ```
+   Replace `[manifest_path]` with the actual manifest path from step 6.
+
+9. Mark Phase 1 as complete in todo list
 
 ---
 
@@ -330,7 +373,12 @@ Execute each phase in order. Use TodoWrite to track progress through all 7 phase
 
 7. Mark Phase 7 as complete
 
-8. Mark all todos as complete
+8. Clean up manifest symlink:
+   ```bash
+   rm -f /tmp/claude_translate_manifest.json
+   ```
+
+9. Mark all todos as complete
 
 ---
 

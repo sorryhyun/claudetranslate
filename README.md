@@ -80,10 +80,12 @@ claudetranslate/
 │   ├── plugin.json              # Plugin manifest
 │   ├── servers/
 │   │   └── text_splitter_mcp.py # MCP server for text splitting
-│   ├── utils/
-│   │   └── text_splitter.py     # Text chunking utility
-│   └── config/
-│       └── languages.json       # Language configuration
+│   └── utils/
+│       └── text_splitter.py     # Text chunking utility
+├── styles/
+│   ├── korean.md                # Language style files
+│   ├── japanese.md
+│   └── ... (19 languages)
 ├── commands/
 │   └── translate.md             # /translate slash command
 ├── agents/
