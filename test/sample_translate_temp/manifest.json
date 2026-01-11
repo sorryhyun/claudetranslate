@@ -1,15 +1,15 @@
 {
   "version": "1.0",
-  "created_at": "2026-01-11T04:45:37.311727+00:00",
-  "updated_at": "2026-01-11T04:45:37.312631+00:00",
+  "created_at": "2026-01-11T05:22:01.168559+00:00",
+  "updated_at": "2026-01-11T05:22:01.170373+00:00",
   "source": {
-    "file_path": "/home/soryhyun/claudetranslate/test/sample.md",
+    "file_path": "/home/sorryhyun/claudetranslate/test/sample.md",
     "word_count": 853
   },
   "target": {
     "language": "korean",
     "code": "ko",
-    "output_path": "/home/soryhyun/claudetranslate/test/sample_ko.md"
+    "output_path": "/home/sorryhyun/claudetranslate/test/sample_ko.md"
   },
   "options": {
     "skip_verify": false,
@@ -20,11 +20,11 @@
   "phases": {
     "input_validation": {
       "status": "completed",
-      "completed_at": "2026-01-11T04:45:37.311727+00:00"
+      "completed_at": "2026-01-11T05:22:01.168559+00:00"
     },
     "context_analysis": {
       "status": "completed",
-      "completed_at": "2026-01-11T04:45:37.312631+00:00"
+      "completed_at": "2026-01-11T05:22:01.170373+00:00"
     },
     "text_splitting": {
       "status": "pending"

@@ -51,6 +51,7 @@ All agents receive file paths (not text content) and write their output to files
 The `mcp/` directory contains the MCP server with modular tool loading. Each tool group is a subdirectory with `schema.json` and Python modules exposing `handle(arguments)` functions.
 
 **Tool Groups:**
+- `pdf/` - PDF preprocessing (`pdf_to_text`) - requires `pymupdf` or `pypdf`
 - `text_split/` - Text chunking (`split_text`, `count_words`, `split_paragraphs`)
 - `workspace/` - Workspace management (`init_workspace`, `read_manifest`, `update_manifest`, `update_glossary`, `assemble_translation`)
 
@@ -109,6 +110,16 @@ The filename (without `.md`) is the language identifier. Language codes are mapp
 ```bash
 /translate document.md --target korean
 /translate doc.txt --target ja --output doc_ja.txt --skip-verify
+```
+
+### PDF Preprocessing
+
+To translate a PDF, first extract text using the `pdf_to_text` MCP tool:
+```bash
+# Install dependency
+pip install pymupdf  # or: pip install pypdf
+
+# The pdf_to_text tool is available via MCP
 ```
 
 ## Output

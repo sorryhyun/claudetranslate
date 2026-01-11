@@ -1,0 +1,162 @@
+**# Shots** 3-shot 3-shot 8-shot 10-shot 4-shot 5-shot 0-shot 5-shot
+
+Tab. 4 presents the downstream performance across a diverse set of benchmarks (Bisk et al., 2020; Cobbe et al., 2021; Hendrycks et al., 2020, 2021; Joshi et al., 2017; Zellers et al., 2019). _m_ HC yields comprehensive improvements, consistently outperforming the baseline and surpassing
+HC on the majority of tasks. Notably, compared to HC, _m_ HC further enhances the model’s reasoning capabilities, delivering performance gains of 2.1% on BBH (Suzgun et al., 2022) and
+2.3% on DROP (Dua et al., 2019).
+
+**5.3. Scaling Experiments**
+
+Figure 6 | **Scaling properties of** _**m**_ **HC compared to the Baseline. (a) Compute Scaling Curve.**
+Solid lines depict the performance gap across different compute budgets. Each point represents a specific compute-optimal configuration of model size and dataset size, scaling from 3B and 9B to 27B parameters. **(b) Token Scaling Curve.** Trajectory of the 3B model during training. Each point represents the model’s performance at different training tokens. Detailed architectures and training configurations are provided in Appendix A.1.
+
+To assess the scalability of our approach, we report the relative loss improvement of _m_ HC against the baseline across different scales. In Fig. 6 (a), we plot the compute scaling curve spanning 3B, 9B, and 27B parameters. The trajectory indicates that the performance advantage is robustly maintained even at higher computational budgets, showing only marginal attenuation.
+Furthermore, we examine the within-run dynamics in Fig. 6 (b), which presents the token scaling curve for the 3B model. Collectively, these findings validate the effectiveness of _m_ HC in large-scale scenarios. This conclusion is further corroborated by our in-house large-scale training experiments.
+
+13
+
+Figure 7 | **Propagation Stability of Manifold-Constrained Hyper-Connections (** _**m**_ **HC).** This
+figure illustrates the propagation dynamics of (a) the single-layer mapping PMres (H _𝑙_ [res] ) and (b) the composite mapping [�] _𝑖_ _[𝐿]_ = [−] 1 _[𝑙]_ [P][M][res] [(H] _𝐿_ [res] - _𝑖_ [)][ within the 27B model. The results demonstrate that]
+_m_ HC significantly enhances propagation stability compared to HC.
+
+Figure 8 | **Visualizations of Learnable Mappings.** This figure displays representative singlelayer and composite mappings for HC (first row) and _m_ HC (second row). Each matrix is
+computed by averaging over all tokens within a selected sequence. The labels annotated along the y-axis and x-axis indicate the forward signal gain (row sum) and the backward gradient gain (column sum), respectively.
+
+**5.4. Stability Analysis**
+
+Similar to Fig. 3, Fig. 7 illustrates the propagation stability of _m_ HC. Ideally, the single-layer mapping satisfies the doubly stochastic constraint, implying that both the forward signal gain and the backward gradient gain should equal to 1. However, practice implementations utilizing the Sinkhorn-Knopp algorithm must limit the number of iterations to achieve computational efficiency. In our settings, we use 20 iterations to obtain an approximate solution. Consequently, as shown in Fig. 7(a), the backward gradient gain deviates slightly from 1. In the composite case shown in Fig. 7(b), the deviation increases but remains bounded, reaching a maximum value of approximately 1.6. Notably, compared to the maximum gain magnitude of nearly 3000 in
+HC, _m_ HC significantly reduces it by three orders of magnitude. These results demonstrate that
+_m_ HC significantly enhances propagation stability compared to HC, ensuring stable forward signal and backward gradient flows. Additionally, Fig. 8 displays representative mappings. We observe that for HC, when the maximum gain is large, other values also tend to be significant, which indicates general instability across all propagation paths. In contrast, _m_ HC consistently yields stable results.
+
+14
+
+#### **6. Conclusion and Outlook**
+
+In this paper, we identify that while expanding the width of residual stream and diversifying connections yields performance gains as proposed in Hyper-Connections (HC), the unconstrained nature of these connections leads to signal divergence. This disruption compromises the conservation of signal energy across layers, inducing training instability and hindering the scalability of deep networks. To address these challenges, we introduce **Manifold-Constrained**
+**Hyper-Connections** ( _**m**_ **HC** ), a generalized framework that projects the residual connection space onto a specific manifold. By employing the Sinkhorn-Knopp algorithm to enforce a doubly stochastic constraint on residual mappings, _m_ HC transforms signal propagation into a convex combination of features. Empirical results confirm that _m_ HC effectively restores the identity mapping property, enabling stable large-scale training with superior scalability compared to conventional HC. Crucially, through efficient infrastructure-level optimizations, _m_ HC delivers these improvements with negligible computational overhead.
+
+As a generalized extension of the HC paradigm, _m_ HC opens several promising avenues for future research. Although this work utilizes doubly stochastic matrices to ensure stability, the framework accommodates the exploration of diverse manifold constraints tailored to specific learning objectives. We anticipate that further investigation into distinct geometric constraints could yield novel methods that better optimize the trade-off between plasticity and stability.
+Furthermore, we hope _m_ HC rejuvenates community interest in macro-architecture design.
+By deepening the understanding of how topological structures influence optimization and representation learning, _m_ HC will help address current limitations and potentially illuminate new pathways for the evolution of next-generation foundational architectures.
+
+#### **References**
+
+J. Ainslie, J. Lee-Thorp, M. De Jong, Y. Zemlyanskiy, F. Lebrón, and S. Sanghai. Gqa: Training generalized multi-query transformer models from multi-head checkpoints. arXiv preprint arXiv:2305.13245, 2023.
+
+Y. Bisk, R. Zellers, R. L. Bras, J. Gao, and Y. Choi. PIQA: reasoning about physical commonsense in natural language. In The Thirty-Fourth AAAI Conference on Artifcial Intelligence, AAAI
+2020, The Thirty-Second Innovative Applications of Artifcial Intelligence Conference, IAAI
+2020, The Tenth AAAI Symposium on Educational Advances in Artifcial Intelligence, EAAI
+2020, New York, NY, USA, February 7-12, 2020, pages 7432–7439. AAAI Press, 2020. doi:
+10.1609/aaai.v34i05.6239. URL `[https://doi.org/10.1609/aaai.v34i05.6239](https://doi.org/10.1609/aaai.v34i05.6239)` .
+
+T. Brown, B. Mann, N. Ryder, M. Subbiah, J. D. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell, et al. Language models are few-shot learners. Advances in neural information processing systems, 33:1877–1901, 2020.
+
+Y. Chai, S. Jin, and X. Hou. Highway transformer: Self-gating enhanced self-attentive networks.
+In D. Jurafsky, J. Chai, N. Schluter, and J. Tetreault, editors, Proceedings of the 58th Annual
+Meeting of the Association for Computational Linguistics, pages 6887–6900, Online, July
+2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.acl-main.616. URL
+`[https://aclanthology.org/2020.acl-main.616/](https://aclanthology.org/2020.acl-main.616/)` .
+
+F. Chollet. Xception: Deep learning with depthwise separable convolutions. In Proceedings of
+
+the IEEE conference on computer vision and pattern recognition, pages 1251–1258, 2017.
+
+15
+
+K. Cobbe, V. Kosaraju, M. Bavarian, M. Chen, H. Jun, L. Kaiser, M. Plappert, J. Tworek, J. Hilton, R. Nakano, et al. Training verifiers to solve math word problems. arXiv preprint arXiv:2110.14168, 2021.
+
+T. Dao, D. Y. Fu, S. Ermon, A. Rudra, and C. Ré. FlashAttention: Fast and memory-efficient exact attention with IO-awareness. In Advances in Neural Information Processing Systems (NeurIPS), 2022.
+
+D. Dua, Y. Wang, P. Dasigi, G. Stanovsky, S. Singh, and M. Gardner. DROP: A reading comprehension benchmark requiring discrete reasoning over paragraphs. In J. Burstein, C. Doran, and
+T. Solorio, editors, Proceedings of the 2019 Conference of the North American Chapter of the
+Association for Computational Linguistics: Human Language Technologies, NAACL-HLT
+2019, Minneapolis, MN, USA, June 2-7, 2019, Volume 1 (Long and Short Papers), pages 2368–
+2378. Association for Computational Linguistics, 2019. doi: 10.18653/V1/N19-1246. URL
+`[https://doi.org/10.18653/v1/n19-1246](https://doi.org/10.18653/v1/n19-1246)` .
+
+Y. Fang, Y. CAI, J. Chen, J. Zhao, G. Tian, and G. Li. Cross-layer retrospective retrieving via layer attention. In The Eleventh International Conference on Learning Representations, 2023. URL
+`[https://openreview.net/forum?id=pvgEL1yS3Ql](https://openreview.net/forum?id=pvgEL1yS3Ql)` .
+
+W. Fedus, B. Zoph, and N. Shazeer. Switch transformers: Scaling to trillion parameter models with simple and efficient sparsity. Journal of Machine Learning Research, 23(120):1–39, 2022.
+
+K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recognition. In Proceedings
+
+of the IEEE conference on computer vision and pattern recognition, pages 770–778, 2016a.
+
+K. He, X. Zhang, S. Ren, and J. Sun. Identity mappings in deep residual networks. In European
+
+conference on computer vision, pages 630–645. Springer, 2016b.
+
+M. Heddes, A. Javanmard, K. Axiotis, G. Fu, M. Bateni, and V. Mirrokni. Deepcrossattention:
+Supercharging transformer residual connections. In Forty-second International Conference on Machine Learning, 2025. URL `[https://openreview.net/forum?id=j3JBfFnGYh](https://openreview.net/forum?id=j3JBfFnGYh)` .
+
+D. Hendrycks, C. Burns, S. Basart, A. Zou, M. Mazeika, D. Song, and J. Steinhardt. Measuring massive multitask language understanding. arXiv preprint arXiv:2009.03300, 2020.
+
+D. Hendrycks, C. Burns, S. Kadavath, A. Arora, S. Basart, E. Tang, D. Song, and J. Steinhardt. Measuring mathematical problem solving with the math dataset. arXiv preprint arXiv:2103.03874, 2021.
+
+J. Hoffmann, S. Borgeaud, A. Mensch, E. Buchatskaya, T. Cai, E. Rutherford, D. de Las Casas, L. A. Hendricks, J. Welbl, A. Clark, T. Hennigan, E. Noland, K. Millican, G. van den Driessche, B. Damoc, A. Guy, S. Osindero, K. Simonyan, E. Elsen, O. Vinyals, J. Rae, and L. Sifre.
+An empirical analysis of compute-optimal large language model training. In S. Koyejo, S. Mohamed, A. Agarwal, D. Belgrave, K. Cho, and A. Oh, editors, Advances in Neural
+Information Processing Systems, volume 35, pages 30016–30030. Curran Associates, Inc., 2022.
+URL `[https://proceedings.neurips.cc/paper_files/paper/2022/file/c1e2faf](https://proceedings.neurips.cc/paper_files/paper/2022/file/c1e2faff6f588870935f114ebe04a3e5-Paper-Conference.pdf)`
+`[f6f588870935f114ebe04a3e5-Paper-Conference.pdf](https://proceedings.neurips.cc/paper_files/paper/2022/file/c1e2faff6f588870935f114ebe04a3e5-Paper-Conference.pdf)` .
+
+G. Huang, Z. Liu, L. Van Der Maaten, and K. Q. Weinberger. Densely connected convolutional networks. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 4700–4708, 2017.
+
+16
+
+M. Joshi, E. Choi, D. Weld, and L. Zettlemoyer. TriviaQA: A large scale distantly supervised challenge dataset for reading comprehension. In R. Barzilay and M.-Y. Kan, editors, Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long
+Papers), pages 1601–1611, Vancouver, Canada, July 2017. Association for Computational
+Linguistics. doi: 10.18653/v1/P17-1147. URL `[https://aclanthology.org/P17-1147](https://aclanthology.org/P17-1147)` .
+
+G. Larsson, M. Maire, and G. Shakhnarovich. Fractalnet: Ultra-deep neural networks without residuals. arXiv preprint arXiv:1605.07648, 2016.
+
+D. Lepikhin, H. Lee, Y. Xu, D. Chen, O. Firat, Y. Huang, M. Krikun, N. Shazeer, and Z. Chen.
+Gshard: Scaling giant models with conditional computation and automatic sharding. arXiv preprint arXiv:2006.16668, 2020.
+
+A. Liu, B. Feng, B. Wang, B. Wang, B. Liu, C. Zhao, C. Dengr, C. Ruan, D. Dai, D. Guo, et al.
+Deepseek-v2: A strong, economical, and efficient mixture-of-experts language model. arXiv preprint arXiv:2405.04434, 2024a.
+
+A. Liu, B. Feng, B. Xue, B. Wang, B. Wu, C. Lu, C. Zhao, C. Deng, C. Zhang, C. Ruan, et al.
+Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437, 2024b.
+
+I. Loshchilov and F. Hutter. Decoupled weight decay regularization. arXiv preprint arXiv:1711.05101, 2017.
+
+B. Mak and J. Flanigan. Residual matrix transformers: Scaling the size of the residual stream.
+
+arXiv preprint arXiv:2506.22696, 2025.
+
+G. Menghani, R. Kumar, and S. Kumar. LAurel: Learned augmented residual layer. In
+Forty-second International Conference on Machine Learning, 2025. URL `[https://open](https://openreview.net/forum?id=rUDRWP9WvZ)`
+`[review.net/forum?id=rUDRWP9WvZ](https://openreview.net/forum?id=rUDRWP9WvZ)` .
+
+M. Pagliardini, A. Mohtashami, F. Fleuret, and M. Jaggi. Denseformer: Enhancing information flow in transformers via depth weighted averaging. In The Thirty-eighth Annual Conference on Neural Information Processing Systems, 2024. URL `[https://openreview.net/forum](https://openreview.net/forum?id=kMnoh7CXrq)`
+`[?id=kMnoh7CXrq](https://openreview.net/forum?id=kMnoh7CXrq)` .
+
+P. Qi, X. Wan, G. Huang, and M. Lin. Zero bubble (almost) pipeline parallelism. In The Twelfth
+
+International Conference on Learning Representations, 2024. URL `[https://openreview](https://openreview.net/forum?id=tuzTN0eIO5)`
+`[.net/forum?id=tuzTN0eIO5](https://openreview.net/forum?id=tuzTN0eIO5)` .
+
+N. Shazeer. Fast transformer decoding: One write-head is all you need. arXiv preprint arXiv:1911.02150, 2019.
+
+N. Shazeer, A. Mirhoseini, K. Maziarz, A. Davis, Q. Le, G. Hinton, and J. Dean. Outrageously large neural networks: The sparsely-gated mixture-of-experts layer. arXiv preprint arXiv:1701.06538, 2017.
+
+R. Sinkhorn and P. Knopp. Concerning nonnegative matrices and doubly stochastic matrices.
+
+Pacifc Journal of Mathematics, 21(2):343–348, 1967.
+
+R. K. Srivastava, K. Greff, and J. Schmidhuber. Training very deep networks. In C. Cortes, N. Lawrence, D. Lee, M. Sugiyama, and R. Garnett, editors, Advances in Neural Information
+Processing Systems, volume 28. Curran Associates, Inc., 2015. URL `[https://proceedings.](https://proceedings.neurips.cc/paper_files/paper/2015/file/215a71a12769b056c3c32e7299f1c5ed-Paper.pdf)`
+``` neurips.cc/paper_files/paper/2015/file/215a71a12769b056c3c32e7299f1c5e
+```
+
+`[d-Paper.pdf](https://proceedings.neurips.cc/paper_files/paper/2015/file/215a71a12769b056c3c32e7299f1c5ed-Paper.pdf)` .
+
+17
+
+J. Su, M. Ahmed, Y. Lu, S. Pan, W. Bo, and Y. Liu. Roformer: Enhanced transformer with rotary position embedding. Neurocomputing, 568:127063, 2024.
+
+M. Suzgun, N. Scales, N. Schärli, S. Gehrmann, Y. Tay, H. W. Chung, A. Chowdhery, Q. V. Le, E. H. Chi, D. Zhou, et al. Challenging big-bench tasks and whether chain-of-thought can solve them. arXiv preprint arXiv:2210.09261, 2022.
+
+H. Touvron, T. Lavril, G. Izacard, X. Martinet, M.-A. Lachaux, T. Lacroix, B. Rozière, N. Goyal, E. Hambro, F. Azhar, et al. Llama: Open and efficient foundation language models. arXiv preprint arXiv:2302.13971, 2023.
+
+A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, Ł. Kaiser, and I. Polosukhin. Attention is all you need. Advances in neural information processing systems, 30, 2017.

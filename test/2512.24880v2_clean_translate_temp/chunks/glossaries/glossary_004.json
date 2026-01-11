@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "chunk_index": 4,
+  "translated": true,
+  "target_language": "korean",
+  "terms": [
+    {
+      "source": "Manifold-Constrained Hyper-Connections (mHC)",
+      "translation": "매니폴드 제약 하이퍼 연결 (mHC)",
+      "context": "Core methodology introduced and evaluated throughout the paper; describes the constrained connection framework that improves propagation stability",
+      "category": "domain_specific",
+      "notes": "Following context analysis recommendation: keep English acronym, translate descriptor. This is the core contribution of the paper."
+    },
+    {
+      "source": "doubly stochastic constraint",
+      "translation": "이중 확률 제약",
+      "context": "Mathematical property enforced on residual mappings where both forward signal gain and backward gradient gain equal 1, central to stability analysis",
+      "category": "technical",
+      "notes": "Standard mathematical term in Korean academic literature. 이중 확률 is the established translation for doubly stochastic."
+    },
+    {
+      "source": "Sinkhorn-Knopp algorithm",
+      "translation": "싱크혼-크놉 알고리즘",
+      "context": "Algorithm used to enforce doubly stochastic constraints on matrices; uses approximately 20 iterations for computational efficiency",
+      "category": "technical",
+      "notes": "Following context analysis: transliterate the algorithm name while maintaining the original reference for clarity."
+    },
+    {
+      "source": "propagation stability",
+      "translation": "전파 안정성",
+      "context": "Measure of how consistently signals propagate through layers; contrasts with HC which has maximum gain magnitude nearly 3000 versus mHC at approximately 1.6",
+      "category": "domain_specific",
+      "notes": "Core concept in deep learning stability analysis. 전파 is signal/forward propagation, 안정성 is stability."
+    },
+    {
+      "source": "forward signal gain",
+      "translation": "순전파 신호 증폭",
+      "context": "Row sum metric indicating signal strength in forward propagation direction; ideally equals 1 in doubly stochastic matrices",
+      "category": "technical",
+      "notes": "순전파 is the standard term for forward propagation/forward pass. 신호 증폭 represents signal gain."
+    },
+    {
+      "source": "backward gradient gain",
+      "translation": "역전파 기울기 증폭",
+      "context": "Column sum metric indicating gradient strength in backward propagation; ideally equals 1 but deviates slightly due to algorithm approximation",
+      "category": "technical",
+      "notes": "역전파 is the standard term for backpropagation. 기울기 증폭 represents gradient gain."
+    },
+    {
+      "source": "compute scaling curve",
+      "translation": "연산 확장성 곡선",
+      "context": "Performance measurement across different computational budgets; spans 3B, 9B, and 27B parameter models showing maintained performance advantage at higher scales",
+      "category": "domain_specific",
+      "notes": "연산 refers to computation, 확장성 refers to scaling, 곡선 refers to curve. This is used for performance comparisons."
+    },
+    {
+      "source": "token scaling curve",
+      "translation": "토큰 확장성 곡선",
+      "context": "Within-training dynamics showing 3B model performance evolution across different training token counts",
+      "category": "domain_specific",
+      "notes": "토큰 (token) is typically kept as-is in Korean technical writing. 확장성 곡선 refers to scaling curve."
+    },
+    {
+      "source": "identity mapping property",
+      "translation": "항등 사상 특성",
+      "context": "Restored feature that enables stable large-scale training by ensuring residual connections preserve the identity function",
+      "category": "domain_specific",
+      "notes": "항등 사상 is the standard mathematical term for identity mapping in Korean. 특성 means property/characteristic."
+    },
+    {
+      "source": "convex combination",
+      "translation": "볼록 조합",
+      "context": "Mathematical transformation achieved through doubly stochastic constraints that combines features as weighted sums",
+      "category": "technical",
+      "notes": "Standard mathematical term in Korean. 볼록 means convex, 조합 means combination."
+    }
+  ]
+}

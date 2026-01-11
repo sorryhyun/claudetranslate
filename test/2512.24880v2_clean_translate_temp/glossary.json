@@ -1,0 +1,162 @@
+{
+  "version": "1.0",
+  "target_language": "korean",
+  "target_language_code": "ko",
+  "terms": [
+    {
+      "source": "Manifold-Constrained Hyper-Connections",
+      "translation": "매니폴드 제약 하이퍼 연결 (mHC)",
+      "notes": "Core concept - keeps English acronym mHC"
+    },
+    {
+      "source": "Hyper-Connections",
+      "translation": "하이퍼 연결 (HC)",
+      "notes": "Keeps English acronym HC"
+    },
+    {
+      "source": "Residual Connection",
+      "translation": "잔차 연결",
+      "notes": "Standard ML term in Korean"
+    },
+    {
+      "source": "Identity Mapping",
+      "translation": "항등 사상",
+      "notes": "Formal mathematical Korean term"
+    },
+    {
+      "source": "Sinkhorn-Knopp Algorithm",
+      "translation": "싱크혼-크놉 알고리즘",
+      "notes": "Algorithm name transliterated"
+    },
+    {
+      "source": "Birkhoff Polytope",
+      "translation": "버코프 폴리토프",
+      "notes": "Transliterated mathematician name + polytope"
+    },
+    {
+      "source": "Doubly Stochastic Matrix",
+      "translation": "이중 확률 행렬",
+      "notes": "Established Korean mathematical terminology"
+    },
+    {
+      "source": "Vanishing or Exploding Signals",
+      "translation": "신호 소실 또는 폭발",
+      "notes": "Standard Korean ML terms"
+    },
+    {
+      "source": "Macro Design",
+      "translation": "거시적 설계",
+      "notes": "Academic precision for architectural scope"
+    },
+    {
+      "source": "Residual Stream",
+      "translation": "잔차 스트림",
+      "notes": "Combines 잔차 (residual) with transliteration 스트림"
+    },
+    {
+      "source": "Memory Wall",
+      "translation": "메모리 월",
+      "notes": "Technical hardware term"
+    },
+    {
+      "source": "RMSNorm",
+      "translation": "RMSNorm (제곱 평균 제곱근 정규화)",
+      "notes": "Keep acronym, translate descriptor"
+    },
+    {
+      "source": "Amax Gain Magnitude",
+      "translation": "최대 이득 크기",
+      "notes": "Signal amplification metric"
+    },
+    {
+      "source": "Numerical Instability",
+      "translation": "수치적 불안정성",
+      "notes": "Standard ML terminology"
+    },
+    {
+      "source": "Sinkhorn-Knopp operator",
+      "translation": "싱크혼-크놉 연산자",
+      "notes": "Transliteration + Korean operator"
+    },
+    {
+      "source": "kernel fusion",
+      "translation": "커널 융합",
+      "notes": "Infrastructure optimization technique"
+    },
+    {
+      "source": "recomputing",
+      "translation": "재계산",
+      "notes": "Memory optimization strategy"
+    },
+    {
+      "source": "DualPipe schedule",
+      "translation": "듀얼파이프 스케줄",
+      "notes": "Framework name transliterated"
+    },
+    {
+      "source": "TileLang",
+      "translation": "TileLang",
+      "notes": "Proper noun - framework name kept as-is"
+    },
+    {
+      "source": "pipeline parallelism",
+      "translation": "파이프라인 병렬화",
+      "notes": "Standard ML parallelism term"
+    },
+    {
+      "source": "mixed-precision processing",
+      "translation": "혼합 정밀도 처리",
+      "notes": "Standard ML terminology"
+    },
+    {
+      "source": "doubly stochastic constraint",
+      "translation": "이중 확률 제약",
+      "notes": "Mathematical property"
+    },
+    {
+      "source": "propagation stability",
+      "translation": "전파 안정성",
+      "notes": "Deep learning stability analysis term"
+    },
+    {
+      "source": "forward signal gain",
+      "translation": "순전파 신호 증폭",
+      "notes": "Row sum metric for forward propagation"
+    },
+    {
+      "source": "backward gradient gain",
+      "translation": "역전파 기울기 증폭",
+      "notes": "Column sum metric for backpropagation"
+    },
+    {
+      "source": "compute scaling curve",
+      "translation": "연산 확장성 곡선",
+      "notes": "Performance measurement term"
+    },
+    {
+      "source": "token scaling curve",
+      "translation": "토큰 확장성 곡선",
+      "notes": "Training dynamics term"
+    },
+    {
+      "source": "identity mapping property",
+      "translation": "항등 사상 특성",
+      "notes": "Fundamental stability property"
+    },
+    {
+      "source": "convex combination",
+      "translation": "볼록 조합",
+      "notes": "Standard mathematical term"
+    },
+    {
+      "source": "Auxiliary-loss-free load balancing strategy",
+      "translation": "보조 손실 없는 부하 분산 전략",
+      "notes": "MoE load balancing method"
+    },
+    {
+      "source": "Deep layer aggregation",
+      "translation": "심층 계층 집계",
+      "notes": "Architecture technique"
+    }
+  ]
+}

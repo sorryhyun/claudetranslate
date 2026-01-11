@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "chunk_index": 5,
+  "translated": true,
+  "target_language": "korean",
+  "terms": [
+    {
+      "source": "Auxiliary-loss-free load balancing strategy",
+      "translation": "보조 손실 없는 부하 분산 전략",
+      "context": "Specific method for managing mixture-of-experts load balancing without auxiliary loss; referenced in model specifications table",
+      "category": "domain_specific",
+      "notes": "Standard ML terminology in Korean. 'Auxiliary' = 보조, 'loss' = 손실, 'load balancing' = 부하 분산, 'strategy' = 전략"
+    },
+    {
+      "source": "Tilelang: A composable tiled programming model",
+      "translation": "Tilelang: 합성 가능한 타일 프로그래밍 모델",
+      "context": "Programming framework for AI systems; appears in bibliography",
+      "category": "proper_noun",
+      "notes": "Keep proper noun 'Tilelang' as per context guidelines. Translate descriptive elements: 'composable' = 합성 가능한, 'tiled' = 타일, 'programming model' = 프로그래밍 모델"
+    },
+    {
+      "source": "Muddformer: Breaking residual bottlenecks in transformers via multiway dynamic dense connections",
+      "translation": "Muddformer: 다중 경로 동적 조밀 연결을 통한 트랜스포머의 잔차 병목 극복",
+      "context": "Related transformer architecture approach using multiway dynamic dense connections; bibliography reference",
+      "category": "proper_noun",
+      "notes": "Keep proper noun 'Muddformer'. Translate descriptive part: 'breaking' = 극복, 'residual bottlenecks' = 잔차 병목, 'via' = 통한, 'multiway dynamic dense connections' = 다중 경로 동적 조밀 연결"
+    },
+    {
+      "source": "Aggregated residual transformations for deep neural networks",
+      "translation": "심층 신경망을 위한 집계된 잔차 변환",
+      "context": "Core technique for combining residual connections; fundamental reference to architecture design",
+      "category": "technical",
+      "notes": "Standard technical terminology. 'Aggregated' = 집계된, 'residual' = 잔차, 'transformations' = 변환, 'deep neural networks' = 심층 신경망"
+    },
+    {
+      "source": "Residual: Transformer with dual residual connections",
+      "translation": "Residual: 이중 잔차 연결을 가진 트랜스포머",
+      "context": "Transformer variant using dual residual connections; architectural comparison reference",
+      "category": "proper_noun",
+      "notes": "Keep proper noun 'Residual'. Translate descriptive part: 'dual' = 이중, 'residual connections' = 잔차 연결, 'transformer' = 트랜스포머 (transliterated, standard in Korean)"
+    },
+    {
+      "source": "Deep layer aggregation",
+      "translation": "심층 계층 집계",
+      "context": "Technique for combining outputs from multiple layers; referenced in context of residual architectures",
+      "category": "domain_specific",
+      "notes": "Technical architecture term. 'Deep' = 심층, 'layer' = 계층, 'aggregation' = 집계"
+    },
+    {
+      "source": "HellaSwag: Can a machine really finish your sentence?",
+      "translation": "HellaSwag: 머신이 정말 당신의 문장을 완성할 수 있을까?",
+      "context": "Benchmark dataset for evaluating language model commonsense reasoning; appears in bibliography",
+      "category": "proper_noun",
+      "notes": "Keep proper noun 'HellaSwag' (dataset name). Translate descriptive title: 'Can a machine really' = 머신이 정말, 'finish' = 완성할 수 있을까"
+    },
+    {
+      "source": "Root mean square layer normalization (RMSNorm)",
+      "translation": "제곱 평균 제곱근 계층 정규화 (RMSNorm)",
+      "context": "Normalization technique used in model specifications with epsilon value 1e-20; standard in modern LLMs",
+      "category": "technical",
+      "notes": "Keep acronym RMSNorm. Translate full term: 'Root mean square' = 제곱 평균 제곱근, 'layer normalization' = 계층 정규화 (or 층 정규화)"
+    },
+    {
+      "source": "Hyper-connections",
+      "translation": "하이퍼 연결 (HC)",
+      "context": "Core architectural component discussed throughout; appears in model specifications and appendix context",
+      "category": "technical",
+      "notes": "As per context guidelines, keep English descriptor with Korean translation. This is transliteration + translation approach: 'Hyper-connections' = 하이퍼 연결, abbreviated as (HC)"
+    },
+    {
+      "source": "Sinkhorn-Knopp",
+      "translation": "싱크혼-크놉",
+      "context": "Algorithm for optimizing doubly stochastic matrices; used with max iterations parameter in mHC configurations",
+      "category": "domain_specific",
+      "notes": "Per context guidelines, use transliteration for this algorithm name: Sinkhorn = 싱크혼, Knopp = 크놉. This is standard mathematical terminology used in Korean academic literature"
+    }
+  ]
+}

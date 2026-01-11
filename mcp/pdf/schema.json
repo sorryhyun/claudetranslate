@@ -1,0 +1,32 @@
+{
+  "tools": [
+    {
+      "name": "pdf_to_text",
+      "description": "Extract text content from a PDF file. Returns extracted text with metadata. Use this to preprocess PDF documents before translation.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pdf_path": {
+            "type": "string",
+            "description": "Absolute path to the PDF file to extract text from"
+          },
+          "output_path": {
+            "type": "string",
+            "description": "Optional path to write the extracted text. If provided, text is written to file instead of returned in response."
+          },
+          "format": {
+            "type": "string",
+            "enum": ["text", "markdown"],
+            "description": "Output format: 'text' for plain text (default), 'markdown' for structured markdown with headers and formatting (requires pymupdf4llm)"
+          },
+          "pages": {
+            "type": "array",
+            "items": {"type": "integer"},
+            "description": "Optional list of page numbers to extract (0-indexed). If not provided, all pages are extracted."
+          }
+        },
+        "required": ["pdf_path"]
+      }
+    }
+  ]
+}
