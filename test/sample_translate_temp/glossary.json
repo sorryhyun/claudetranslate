@@ -10,8 +10,11 @@
     },
     {
       "source": "function",
-      "translation": "함수",
-      "notes": "Standard term"
+      "translation": "함수"
+    },
+    {
+      "source": "variable",
+      "translation": "변수"
     }
   ]
 }

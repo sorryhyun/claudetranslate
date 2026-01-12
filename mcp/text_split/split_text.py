@@ -184,8 +184,7 @@ def handle(arguments: dict) -> dict:
     chunks_dir = os.path.join(output_dir, "chunks", "source")
     os.makedirs(chunks_dir, exist_ok=True)
 
-    # Write individual chunk files and build manifest entries
-    manifest_chunks = []
+    # Write individual chunk files
     for chunk in chunks:
         # Use 1-based index for filenames
         chunk_index = chunk['index'] + 1
@@ -196,33 +195,13 @@ def handle(arguments: dict) -> dict:
         with open(chunk_path, "w", encoding="utf-8") as f:
             f.write(chunk['text'])
 
-        # Build manifest entry
-        manifest_chunks.append({
-            "index": chunk_index,
-            "source_file": f"chunks/source/{chunk_filename}",
-            "word_count": chunk['word_count'],
-            "start_pos": chunk['start_pos'],
-            "end_pos": chunk['end_pos'],
-            "headers": chunk['headers'],
-            "summary_file": f"chunks/summaries/summary_{chunk_index:03d}.md",
-            "summary_status": "pending",
-            "glossary_file": f"chunks/glossaries/glossary_{chunk_index:03d}.json",
-            "glossary_status": "pending",
-            "translation_file": f"chunks/translations/translation_{chunk_index:03d}.md",
-            "translation_status": "pending",
-            "translation_confidence": None,
-            "verification_file": f"chunks/verifications/verification_{chunk_index:03d}.md",
-            "verification_status": "pending",
-            "verification_score": None
-        })
-
-    # Update manifest.json
+    # Update manifest.json with chunk count
     manifest_path = os.path.join(output_dir, "manifest.json")
     if os.path.exists(manifest_path):
         with open(manifest_path, "r", encoding="utf-8") as f:
             manifest = json.load(f)
 
-        manifest["chunks"] = manifest_chunks
+        manifest["chunk_count"] = len(chunks)
         manifest["source"]["word_count"] = total_words
 
         with open(manifest_path, "w", encoding="utf-8") as f:

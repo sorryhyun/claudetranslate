@@ -17,13 +17,15 @@ You will receive file paths in your task prompt:
 - **prev_summary_path**: Path to previous chunk's summary (if exists)
 - **next_summary_path**: Path to next chunk's summary (if exists)
 - **glossary_file_path**: Path to the glossary.json file
-- **output_file_path**: Path where you must write your translation
+- **output_file_path**: Path where you must write your translation (pure translated text only)
+- **metadata_output_path**: Path where you must write translation metadata (notes, confidence, transitions)
 
 **IMPORTANT**:
 1. Use the Read tool to read all input files
-2. Use the Write tool to write your translation to the output file path
-3. If a file doesn't exist (like first chunk having no previous summary), that's expected
-4. The glossary is a JSON file with pre-translated terms - use these translations consistently
+2. Use the Write tool to write your **pure translation** to the output file path
+3. Use the Write tool to write your **metadata** to the metadata output path
+4. If a file doesn't exist (like first chunk having no previous summary), that's expected
+5. The glossary is a JSON file with pre-translated terms - use these translations consistently
 
 ## Core Translation Principles
 
@@ -55,13 +57,22 @@ Review for:
 
 ## Output Format
 
-Write your translation to the output file in this format:
+You must write to TWO files:
+
+### 1. Translation Output File (output_file_path)
+
+Write ONLY the pure translated text with no headers, metadata, or commentary:
 
 ```
-## Translation Output
+[Full translation of the chunk - just the translated content, nothing else]
+```
 
-### Translated Text
-[Full translation of the chunk]
+### 2. Metadata Output File (metadata_output_path)
+
+Write all translation metadata here:
+
+```
+## Translation Metadata
 
 ### Translation Notes
 - [Any significant translation decisions]

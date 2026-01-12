@@ -37,7 +37,8 @@ source_translate_temp/
     ├── source/             # chunk_001.txt, chunk_002.txt, ...
     ├── summaries/          # summary_001.md, summary_002.md, ...
     ├── glossaries/         # glossary_001.json, glossary_002.json, ...
-    ├── translations/       # translation_001.md, translation_002.md, ...
+    ├── translations/       # translation_001.txt, translation_002.txt, ... (pure translated text)
+    ├── metadata/           # metadata_001.md, metadata_002.md, ... (notes, confidence, transitions)
     └── verifications/      # verification_001.md, verification_002.md, ...
 ```
 
@@ -149,8 +150,10 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
 
     The tool:
     - Creates individual chunk files: `chunks/source/chunk_001.txt`, etc.
-    - Updates `manifest.json` with chunk metadata
+    - Updates `manifest.json` with `chunk_count`
     - Returns: `manifest_path`, `chunk_count`, `total_words`, `chunk_files`
+
+    **Store the `chunk_count` for use in subsequent phases.**
 
     Update manifest to mark text_splitting phase as completed.
 
@@ -168,9 +171,7 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
 
 2. Update manifest phase status to "in_progress" for summarization
 
-3. Read the manifest to get the chunk list using **read_manifest MCP tool** `mcp__plugin_claude-translate_translator__read_manifest`
-
-4. For each chunk, launch the **summarizer** agent using the Task tool with file paths:
+3. For each chunk (1 to `chunk_count`), launch the **summarizer** agent using the Task tool with file paths:
    ```
    Create a summary for translation context and extract glossary terms.
 
@@ -185,13 +186,11 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
    Read the input files, write your summary to the output file, and write extracted glossary terms to the glossary output file.
    ```
 
-5. **Parallelization:** Launch up to 5 summarizer agents in parallel for efficiency. Wait for each batch to complete before launching the next batch.
+4. **Parallelization:** Launch up to 5 summarizer agents in parallel for efficiency. Wait for each batch to complete before launching the next batch.
 
-6. After each batch, update manifest with chunk summary status and glossary status using update_manifest
+5. Update manifest to mark summarization phase as completed
 
-7. Update manifest to mark summarization phase as completed
-
-8. Mark Phase 2 as complete
+6. Mark Phase 2 as complete
 
 ---
 
@@ -205,9 +204,7 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
 
 2. Update manifest phase status to "in_progress" for glossary_translation
 
-3. Read the manifest to get the chunk list
-
-4. For each chunk, launch the **glossary-translator** agent using the Task tool with file paths:
+3. For each chunk (1 to `chunk_count`), launch the **glossary-translator** agent using the Task tool with file paths:
    ```
    Translate the glossary terms for this chunk.
 
@@ -220,19 +217,18 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
 
 5. **Parallelization:** Launch ALL glossary-translator agents in parallel since they are independent of each other.
 
-6. After all glossary translations complete, merge all chunk glossaries into the main glossary.json:
-   - Read each `chunks/glossaries/glossary_[NNN].json` file
-   - Collect all translated terms
-   - Deduplicate terms (keep first occurrence if duplicates exist)
-   - Use **update_glossary MCP tool** `mcp__plugin_claude-translate_translator__update_glossary` to add all terms to the main glossary:
-     - `glossary_path`: Path to glossary.json
-     - `terms`: Array of all translated term objects
+6. After all glossary translations complete, use the **merge_glossaries MCP tool** `mcp__plugin_claude-translate_translator__merge_glossaries`:
+   - `manifest_path`: Path to manifest.json
 
-7. Update manifest with glossary status for each chunk
+   The tool:
+   - Reads all chunk glossaries from `chunks/glossaries/`
+   - Deduplicates terms (keeps first occurrence)
+   - Writes merged terms to the main `glossary.json`
+   - Returns: `terms_merged`, `duplicates_removed`, `chunk_glossaries_processed`
 
-8. Update manifest to mark glossary_translation phase as completed
+7. Update manifest to mark glossary_translation phase as completed
 
-9. Mark Phase 3 as complete
+8. Mark Phase 3 as complete
 
 ---
 
@@ -246,7 +242,7 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
 
 2. Update manifest phase status to "in_progress" for translation
 
-3. For each chunk, launch the **translator** agent using the Task tool with file paths:
+3. For each chunk (1 to `chunk_count`), launch the **translator** agent using the Task tool with file paths:
    ```
    Translate this text chunk to [target language].
 
@@ -256,21 +252,20 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
    prev_summary_path: [workspace_dir]/chunks/summaries/summary_[NNN-1].md (or "none" for first chunk)
    next_summary_path: [workspace_dir]/chunks/summaries/summary_[NNN+1].md (or "none" for last chunk)
    glossary_file_path: [workspace_dir]/glossary.json
-   output_file_path: [workspace_dir]/chunks/translations/translation_[NNN].md
+   output_file_path: [workspace_dir]/chunks/translations/translation_[NNN].txt
+   metadata_output_path: [workspace_dir]/chunks/metadata/metadata_[NNN].md
 
    Chunk index: [index] of [total]
    Target language: [target language] ([language code])
 
-   Read all input files and write your translation to the output file. Use the pre-translated glossary terms consistently.
+   Read all input files. Write pure translated text to the output file. Write notes, confidence, and transitions to the metadata file. Use the pre-translated glossary terms consistently.
    ```
 
 4. **Parallelization:** Launch up to 5 translator agents in parallel for efficiency. Wait for each batch to complete before launching the next batch.
 
-5. After each batch, update manifest with chunk translation status and confidence levels
+5. Update manifest to mark translation phase as completed
 
-6. Update manifest to mark translation phase as completed
-
-7. Mark Phase 4 as complete
+6. Mark Phase 4 as complete
 
 ---
 
@@ -286,12 +281,12 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
 
 2. Update manifest phase status to "in_progress" for verification
 
-3. For each chunk, launch the **verifier** agent using the Task tool with file paths:
+3. For each chunk (1 to `chunk_count`), launch the **verifier** agent using the Task tool with file paths:
    ```
    Verify this translation for quality. If you find critical issues, provide a revised translation with all fixes applied.
 
    chunk_file_path: [workspace_dir]/chunks/source/chunk_[NNN].txt
-   translation_file_path: [workspace_dir]/chunks/translations/translation_[NNN].md
+   translation_file_path: [workspace_dir]/chunks/translations/translation_[NNN].txt
    context_file_path: [workspace_dir]/context/context_analysis.md
    glossary_file_path: [workspace_dir]/glossary.json
    output_file_path: [workspace_dir]/chunks/verifications/verification_[NNN].md
@@ -307,26 +302,16 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
    - Calculate overall quality score (average)
    - Collect all critical issues
    - Collect all warnings
+   - Count chunks with revisions (those with "## Revised Translation" section)
 
-6. **Check for revisions in each verification file:**
-   - Read each verification file
-   - Look for "## Revised Translation" section
-   - If found and NOT "No revision needed":
-     - Update manifest chunk: `revision_applied: true`
-     - Log: "Chunk [N]: Revision applied"
-   - Otherwise:
-     - Update manifest chunk: `revision_applied: false`
+6. Update manifest to mark verification phase as completed
 
-7. Update manifest with verification status and scores for each chunk
-
-8. Update manifest to mark verification phase as completed
-
-9. Present verification summary to user:
+7. Present verification summary to user:
    - Show overall quality score
    - List chunks that received automatic revisions
    - Summarize types of issues that were fixed
 
-10. Mark Phase 5 as complete
+8. Mark Phase 5 as complete
 
 ---
 
@@ -345,8 +330,8 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
    - `output_path`: Path for final translated document
 
    The tool:
-   - Reads each translation file from the workspace
-   - Extracts the "Translated Text" section from each
+   - Reads each translation file (.txt) from the workspace
+   - Concatenates the pure translated text directly (no section extraction needed)
    - Joins them with double newlines
    - Writes to the output path
 
@@ -385,6 +370,7 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
    - Summaries: chunks/summaries/
    - Glossaries: chunks/glossaries/
    - Translations: chunks/translations/
+   - Translation metadata: chunks/metadata/
    - Verifications: chunks/verifications/
    ```
 

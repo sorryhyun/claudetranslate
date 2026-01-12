@@ -32,6 +32,7 @@ def handle(arguments: Dict[str, Any]) -> Dict[str, Any]:
     os.makedirs(os.path.join(workspace_dir, "chunks", "summaries"), exist_ok=True)
     os.makedirs(os.path.join(workspace_dir, "chunks", "glossaries"), exist_ok=True)
     os.makedirs(os.path.join(workspace_dir, "chunks", "translations"), exist_ok=True)
+    os.makedirs(os.path.join(workspace_dir, "chunks", "metadata"), exist_ok=True)
     os.makedirs(os.path.join(workspace_dir, "chunks", "verifications"), exist_ok=True)
 
     # Determine output path
@@ -49,7 +50,7 @@ def handle(arguments: Dict[str, Any]) -> Dict[str, Any]:
     # Create initial manifest
     now = datetime.now(timezone.utc).isoformat()
     manifest = {
-        "version": "1.0",
+        "version": "2.0",
         "created_at": now,
         "updated_at": now,
         "source": {
@@ -62,10 +63,7 @@ def handle(arguments: Dict[str, Any]) -> Dict[str, Any]:
             "output_path": os.path.abspath(output_path)
         },
         "options": {
-            "skip_verify": skip_verify,
-            "target_chunk_words": 1000,
-            "min_chunk_words": 500,
-            "max_chunk_words": 1500
+            "skip_verify": skip_verify
         },
         "phases": {
             "input_validation": {"status": "completed", "completed_at": now},
@@ -77,9 +75,7 @@ def handle(arguments: Dict[str, Any]) -> Dict[str, Any]:
             "verification": {"status": "pending" if not skip_verify else "skipped"},
             "assembly": {"status": "pending"}
         },
-        "chunks": [],
-        "context_analysis_file": "context/context_analysis.md",
-        "glossary_file": "glossary.json"
+        "chunk_count": 0
     }
 
     manifest_path = os.path.join(workspace_dir, "manifest.json")

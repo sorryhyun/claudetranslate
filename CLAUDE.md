@@ -23,7 +23,7 @@ echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | python3 -m mcp.mcp
 The `/translate` command creates a workspace directory next to the source file:
 ```
 source_translate_temp/
-├── manifest.json           # Job state and chunk metadata
+├── manifest.json           # Job state (phases, chunk_count)
 ├── glossary.json           # Merged terminology glossary (after Phase 3)
 ├── context/
 │   └── context_analysis.md
@@ -31,11 +31,12 @@ source_translate_temp/
     ├── source/             # chunk_001.txt, chunk_002.txt, ...
     ├── summaries/          # summary_001.md, ...
     ├── glossaries/         # glossary_001.json, ... (per-chunk glossaries)
-    ├── translations/       # translation_001.md, ...
+    ├── translations/       # translation_001.txt, ... (pure translated text)
+    ├── metadata/           # metadata_001.md, ... (notes, confidence, transitions)
     └── verifications/      # verification_001.md, ...
 ```
 
-All agents receive file paths (not text content) and write their output to files. The `manifest.json` tracks job state across all 6 pipeline phases.
+All agents receive file paths (not text content) and write their output to files. The `manifest.json` tracks phase status and chunk count. File paths are derived from predictable naming conventions (e.g., `chunk_001.txt`, `translation_001.txt`).
 
 ### Translation Pipeline (6 Phases)
 
@@ -53,7 +54,7 @@ The `mcp/` directory contains the MCP server with modular tool loading. Each too
 **Tool Groups:**
 - `pdf/` - PDF preprocessing (`pdf_to_text`) - requires `pymupdf` or `pypdf`
 - `text_split/` - Text chunking (`split_text`, `count_words`, `split_paragraphs`)
-- `workspace/` - Workspace management (`init_workspace`, `read_manifest`, `update_manifest`, `update_glossary`, `assemble_translation`)
+- `workspace/` - Workspace management (`init_workspace`, `read_manifest`, `update_manifest`, `update_glossary`, `merge_glossaries`, `assemble_translation`)
 
 The server auto-discovers tool groups at startup via `_load_tool_groups()` in `mcp.py`.
 

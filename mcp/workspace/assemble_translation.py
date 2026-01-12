@@ -36,12 +36,17 @@ def strip_non_translation_sections(content: str) -> str:
     return result.strip()
 
 
-def extract_translated_text(translation_content: str) -> str:
-    """Extract the translated text section from the translation markdown.
+def extract_translated_text(translation_content: str, file_path: str = "") -> str:
+    """Extract the translated text from translation file.
 
-    Handles both ## and ### header levels, and stops at known non-translation
-    sections like Glossary, Notes, Confidence, etc.
+    For .txt files (pure translation): returns the content as-is.
+    For .md files (legacy format): extracts the "Translated Text" section.
     """
+    # Pure text files (.txt) contain only the translation - return as-is
+    if file_path.endswith('.txt'):
+        return translation_content.strip()
+
+    # For markdown files, try to extract the "Translated Text" section
     lines = translation_content.split('\n')
     in_translated_section = False
     translated_lines = []
@@ -116,6 +121,38 @@ def extract_revised_translation(verification_content: str) -> Optional[str]:
     return result
 
 
+def get_chunk_path(workspace_dir: str, chunk_type: str, index: int) -> str:
+    """Get the path for a chunk file based on type and index.
+
+    Args:
+        workspace_dir: The workspace directory path
+        chunk_type: One of 'source', 'translation', 'verification', 'summary', 'metadata'
+        index: 1-based chunk index
+    """
+    ext = "txt" if chunk_type in ("source", "translation") else "md"
+    if chunk_type == "glossary":
+        ext = "json"
+
+    prefix_map = {
+        "source": "chunk",
+        "translation": "translation",
+        "verification": "verification",
+        "summary": "summary",
+        "metadata": "metadata",
+        "glossary": "glossary"
+    }
+    prefix = prefix_map.get(chunk_type, chunk_type)
+    filename = f"{prefix}_{index:03d}.{ext}"
+
+    if chunk_type == "source":
+        return os.path.join(workspace_dir, "chunks", "source", filename)
+    elif chunk_type == "glossary":
+        return os.path.join(workspace_dir, "chunks", "glossaries", filename)
+    else:
+        folder = f"{chunk_type}s" if not chunk_type.endswith("s") else chunk_type
+        return os.path.join(workspace_dir, "chunks", folder, filename)
+
+
 def handle(arguments: Dict[str, Any]) -> Dict[str, Any]:
     """Assemble translated chunks into final output.
 
@@ -130,47 +167,38 @@ def handle(arguments: Dict[str, Any]) -> Dict[str, Any]:
         manifest = json.load(f)
 
     workspace_dir = os.path.dirname(manifest_path)
-    chunks = manifest["chunks"]
+    chunk_count = manifest.get("chunk_count", 0)
 
-    if not chunks:
+    if chunk_count == 0:
         raise ValueError("No chunks found in manifest")
-
-    # Sort chunks by index
-    chunks_sorted = sorted(chunks, key=lambda c: c["index"])
 
     # Collect translated text from each chunk
     translated_parts = []
     revision_count = 0
 
-    for chunk in chunks_sorted:
+    for i in range(1, chunk_count + 1):
         translated_text = None
 
         # First, check if revision exists in verification file
-        if chunk.get("revision_applied", False):
-            verification_file = chunk.get("verification_file")
-            if verification_file:
-                verification_path = os.path.join(workspace_dir, verification_file)
-                if os.path.exists(verification_path):
-                    with open(verification_path, "r", encoding="utf-8") as f:
-                        verification_content = f.read()
-                    translated_text = extract_revised_translation(verification_content)
-                    if translated_text:
-                        revision_count += 1
+        verification_path = get_chunk_path(workspace_dir, "verification", i)
+        if os.path.exists(verification_path):
+            with open(verification_path, "r", encoding="utf-8") as f:
+                verification_content = f.read()
+            revised = extract_revised_translation(verification_content)
+            if revised:
+                translated_text = revised
+                revision_count += 1
 
         # Fall back to original translation
         if not translated_text:
-            translation_file = chunk.get("translation_file")
-            if not translation_file:
-                raise ValueError(f"No translation file for chunk {chunk['index']}")
-
-            translation_path = os.path.join(workspace_dir, translation_file)
+            translation_path = get_chunk_path(workspace_dir, "translation", i)
             if not os.path.exists(translation_path):
                 raise ValueError(f"Translation file not found: {translation_path}")
 
             with open(translation_path, "r", encoding="utf-8") as f:
                 translation_content = f.read()
 
-            translated_text = extract_translated_text(translation_content)
+            translated_text = extract_translated_text(translation_content, translation_path)
 
         translated_parts.append(translated_text)
 
@@ -187,7 +215,7 @@ def handle(arguments: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "success": True,
         "output_path": output_path,
-        "chunk_count": len(chunks_sorted),
+        "chunk_count": chunk_count,
         "output_word_count": output_word_count,
         "revisions_applied": revision_count
     }

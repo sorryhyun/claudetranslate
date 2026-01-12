@@ -47,7 +47,7 @@
     },
     {
       "name": "update_manifest",
-      "description": "Update the translation manifest with phase progress or chunk status.",
+      "description": "Update the translation manifest with phase progress.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -68,14 +68,6 @@
           "phase_progress": {
             "type": "string",
             "description": "Optional progress indicator (e.g., '3/8')"
-          },
-          "chunk_index": {
-            "type": "integer",
-            "description": "Chunk index to update (1-based)"
-          },
-          "chunk_updates": {
-            "type": "object",
-            "description": "Key-value pairs to update in the chunk entry"
           }
         },
         "required": ["manifest_path"]
@@ -112,6 +104,20 @@
           }
         },
         "required": ["glossary_path", "terms"]
+      }
+    },
+    {
+      "name": "merge_glossaries",
+      "description": "Merge per-chunk glossaries into the main glossary.json. Reads all glossary files from chunks/glossaries/, deduplicates terms, and writes to glossary.json.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "manifest_path": {
+            "type": "string",
+            "description": "Path to manifest.json"
+          }
+        },
+        "required": ["manifest_path"]
       }
     },
     {

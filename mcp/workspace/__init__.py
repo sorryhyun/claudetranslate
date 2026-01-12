@@ -4,6 +4,7 @@ from . import init_workspace
 from . import read_manifest
 from . import update_manifest
 from . import update_glossary
+from . import merge_glossaries
 from . import assemble_translation
 
 TOOLS = {
@@ -11,5 +12,6 @@ TOOLS = {
     "read_manifest": read_manifest,
     "update_manifest": update_manifest,
     "update_glossary": update_glossary,
+    "merge_glossaries": merge_glossaries,
     "assemble_translation": assemble_translation,
 }

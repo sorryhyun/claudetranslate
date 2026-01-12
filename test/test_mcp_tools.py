@@ -9,7 +9,7 @@ import shutil
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from mcp.workspace import init_workspace, read_manifest, update_manifest, update_glossary, assemble_translation
+from mcp.workspace import init_workspace, read_manifest, update_manifest, update_glossary, merge_glossaries, assemble_translation
 from mcp.text_split import split_text
 
 TEST_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -71,7 +71,7 @@ def test_read_manifest(manifest_path):
     })
     print(f"Source file: {result['source']['file_path']}")
     print(f"Target language: {result['target']['language']}")
-    print(f"Chunk count: {len(result['chunks'])}")
+    print(f"Chunk count: {result['chunk_count']}")
     return result
 
 
@@ -113,37 +113,68 @@ def test_update_glossary(glossary_path):
     return result
 
 
+def test_merge_glossaries(manifest_path, workspace_dir):
+    """Test merge_glossaries tool."""
+    print("\n=== Testing merge_glossaries ===")
+
+    # Create some mock chunk glossaries
+    glossaries_dir = os.path.join(workspace_dir, "chunks", "glossaries")
+    os.makedirs(glossaries_dir, exist_ok=True)
+
+    # Chunk 1 glossary
+    with open(os.path.join(glossaries_dir, "glossary_001.json"), 'w') as f:
+        json.dump({
+            "terms": [
+                {"source": "API", "translation": "API", "notes": "Keep as-is"},
+                {"source": "function", "translation": "함수"}
+            ]
+        }, f)
+
+    # Chunk 2 glossary with duplicate and new term
+    with open(os.path.join(glossaries_dir, "glossary_002.json"), 'w') as f:
+        json.dump({
+            "terms": [
+                {"source": "API", "translation": "API (duplicate)"},  # Duplicate - should be ignored
+                {"source": "variable", "translation": "변수"}
+            ]
+        }, f)
+
+    result = merge_glossaries.handle({
+        "manifest_path": manifest_path
+    })
+    print(f"Terms merged: {result['terms_merged']}")
+    print(f"Duplicates removed: {result['duplicates_removed']}")
+    print(f"Chunk glossaries processed: {result['chunk_glossaries_processed']}")
+
+    # Verify main glossary
+    with open(os.path.join(workspace_dir, "glossary.json"), 'r') as f:
+        glossary = json.load(f)
+
+    assert result['terms_merged'] == 3, f"Expected 3 terms, got {result['terms_merged']}"
+    assert result['duplicates_removed'] == 1, f"Expected 1 duplicate, got {result['duplicates_removed']}"
+    assert len(glossary['terms']) == 3
+    print("Merge verified")
+    return result
+
+
 def test_assemble_translation(manifest_path, output_path, workspace_dir):
     """Test assemble_translation tool."""
     print("\n=== Testing assemble_translation ===")
 
-    # First, create some mock translation files
+    # Read manifest to get chunk count
     manifest = read_manifest.handle({"manifest_path": manifest_path})
+    chunk_count = manifest['chunk_count']
 
-    for chunk in manifest['chunks']:
-        trans_path = os.path.join(workspace_dir, chunk['translation_file'])
+    # Create mock translation files (pure text format)
+    for i in range(1, chunk_count + 1):
+        trans_path = os.path.join(workspace_dir, "chunks", "translations", f"translation_{i:03d}.txt")
         os.makedirs(os.path.dirname(trans_path), exist_ok=True)
+
+        # Write pure translated text (no headers or metadata)
         with open(trans_path, 'w') as f:
-            f.write(f"""## Translation Output
+            f.write(f"""이것은 청크 {i}의 번역입니다.
 
-### Translated Text
-이것은 청크 {chunk['index']}의 번역입니다.
-
-테스트 번역 내용입니다.
-
-### Glossary Additions
-| Source Term | Translation | Notes |
-|-------------|-------------|-------|
-
-### Translation Notes
-- Test translation
-
-### Confidence Level
-High - Test
-
-### Transition Notes
-- Ending: Test ending
-""")
+테스트 번역 내용입니다.""")
 
     result = assemble_translation.handle({
         "manifest_path": manifest_path,
@@ -185,6 +216,9 @@ def main():
 
         # Test update_glossary
         test_update_glossary(glossary_path)
+
+        # Test merge_glossaries
+        test_merge_glossaries(manifest_path, workspace_dir)
 
         # Test assemble_translation
         output_path = os.path.join(TEST_DIR, "sample_ko.md")
