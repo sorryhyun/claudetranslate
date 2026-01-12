@@ -6,45 +6,52 @@
   "terms": [
     {
       "source": "chief clerk",
-      "translation": "주임",
-      "context": "Corporate authority figure who visits the Samsa apartment to investigate Gregor's absence from work; represents employer scrutiny and rigid business hierarchy",
-      "category": "proper_noun",
-      "notes": "Following context analysis suggestion; 주임 (department chief/manager) is appropriate for early 20th century hierarchical business context"
+      "translation": "과장",
+      "context": "Authority figure from Gregor's workplace who witnesses the transformation, flees in panic, and represents the firm's reaction to Gregor's condition. Gregor desperately attempts to convince him of continued professional reliability.",
+      "category": "proper_role",
+      "notes": "과장 (gwajang) is the standard Korean term for chief clerk/manager in a corporate hierarchy. Alternative: 수석 사무원 (suseok samujangwon). Chose 과장 for its authority connotation."
     },
     {
-      "source": "fretsaw",
-      "translation": "실톱",
-      "context": "A hobby tool used by Gregor for craftsmanship; mentioned by mother as evidence of his dedication and skill",
+      "source": "commercial traveller",
+      "translation": "여행하는 세일즈맨",
+      "context": "Gregor's profession; he repeatedly emphasizes his work ethic and role as a travelling salesman to convince the chief clerk he can return to work despite his transformation.",
       "category": "domain_specific",
-      "notes": "Translated as 실톱 (coping saw/fretsaw); context analysis acknowledges this is a specialized tool that may require cultural context but translation is preferred"
+      "notes": "여행하는 세일즈맨 (yeohaenghaneun seiljeummaen) maintains the emphasis on traveling. Alternative: 외판원 (oepanwon) is more concise. This choice preserves the traveling aspect central to Gregor's identity."
     },
     {
-      "source": "commerce",
-      "translation": "상업",
-      "context": "Business context invoked by the chief clerk when explaining that those in commerce must overcome illness due to business obligations",
+      "source": "locksmith",
+      "translation": "자물쇠 수리공",
+      "context": "Professional summoned by Gregor's father to force the door open, though ultimately Gregor opens it himself using his jaw and teeth.",
       "category": "domain_specific",
-      "notes": "Standard business Korean term; 상업 conveys the commercial/business sector context"
+      "notes": "자물쇠 수리공 (jamulssoe surigong) is the literal Korean equivalent for locksmith, combining 자물쇠 (lock) + 수리공 (repairman/craftsman)."
     },
     {
-      "source": "travelling salesman",
-      "translation": "외판원",
-      "context": "Gregor's profession; establishes his occupation and work responsibilities that create pressure and obligation",
-      "category": "domain_specific",
-      "notes": "Follows context analysis suggestion of 외판원 as period-appropriate occupation; indicates traveling salesman role"
-    },
-    {
-      "source": "train timetables",
-      "translation": "열차 시간표",
-      "context": "Referenced as part of Gregor's leisure activities; emphasizes the pervasiveness of work-related thinking in his daily life",
-      "category": "domain_specific",
-      "notes": "Direct translation; 열차 (train) + 시간표 (timetable) reflects Gregor's obsession with schedules and work obligations"
-    },
-    {
-      "source": "elastic",
-      "translation": "탄력 있는",
-      "context": "Descriptor applied to Gregor's back when describing the resilience of his transformed body as it hits the carpet",
+      "source": "adhesive on the tips of his legs",
+      "translation": "다리 끝의 접착성 물질",
+      "context": "Physical feature allowing Gregor to hold himself upright against the door; specific sensory detail describing his transformed body's capabilities.",
       "category": "technical",
-      "notes": "Uses 탄력 있는 (elastic/springy) to describe the physical quality of Gregor's insect carapace absorbing impact with resilience"
+      "notes": "다리 끝의 접착성 물질 (dari kkeut-ui jeobchakseong muljil) translates the technical description literally. This maintains Kafka's matter-of-fact description of the transformation's biological details."
+    },
+    {
+      "source": "lieutenant",
+      "translation": "중위",
+      "context": "Former military rank visible in the photograph on the living room wall showing Gregor in uniform with sword, indicating his past social status and respectability.",
+      "category": "proper_rank",
+      "notes": "중위 (jungwi) is the standard Korean military rank equivalent to lieutenant, crucial for conveying Gregor's former social respectability."
+    },
+    {
+      "source": "entrance hall",
+      "translation": "현관",
+      "context": "Spatial location connecting the flat's main room to the landing and stairs; critical to the geography of the family's reaction and the chief clerk's escape.",
+      "category": "domain_specific",
+      "notes": "현관 (hyeongwan) is the standard Korean term for entrance hall/foyer. Alternatives considered: 입구 (entrance), but 현관 better captures the domestic architectural space."
+    },
+    {
+      "source": "banister",
+      "translation": "난간",
+      "context": "The stair railing that the chief clerk desperately grabs with both hands while retreating, emphasizing his panic-stricken flight.",
+      "category": "domain_specific",
+      "notes": "난간 (nangan) is the standard Korean term for a stair railing or banister, essential for describing the physical action of the chief clerk's panicked escape."
     }
   ]
 }

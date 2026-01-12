@@ -2,105 +2,74 @@
 
 ### Domain
 Primary: Literary Fiction
-Secondary: Psychological Fiction, Modernist Literature
-Specialized subdomain: Existentialist narrative, absurdist fiction, early 20th century German literature (Franz Kafka's "The Metamorphosis")
+Secondary: Existential/Psychological Literature
+Specialized subdomain: Early 20th-century modernist literature, specifically Franz Kafka's "The Metamorphosis" (Die Verwandlung). This is a canonical work of absurdist/existentialist fiction dealing with themes of alienation, identity, and familial obligation.
 
 ### Audience
-Target readers: Adult readers of classic literature, students of modernist literature, general fiction audience
-Technical expertise level: Beginner to intermediate (no specialized knowledge required, but benefits from literary awareness)
-Expected use: Reading for literary appreciation, academic study, philosophical reflection
+Target readers: General literary audience, students of literature, readers interested in classic modernist fiction
+Technical expertise level: Intermediate - assumes familiarity with literary conventions but not necessarily academic expertise
+Expected use: Literary appreciation, educational study, cultural enrichment
 
 ### Tone and Register
-Formality: Formal-literary with accessible prose
-Voice preference: Third-person omniscient with close psychological focus on protagonist; predominantly active voice with occasional passive constructions for narrative effect
-Narrative person: Third person, limited omniscient perspective (primarily through Gregor's consciousness)
-Emotional tone: Detached yet intimate, matter-of-fact treatment of surreal premise, building tension and anxiety, tragicomic elements, underlying despair and isolation
+Formality: Semi-formal literary prose
+Voice preference: Third-person limited omniscient narration, primarily following Gregor's perspective with occasional objective descriptions
+Narrative person: Third person, though deeply intimate with protagonist's thoughts
+Emotional tone: Disturbing, surreal, yet matter-of-fact; combines the absurd (man transformed into insect) with mundane realism (work obligations, family dynamics). The tone oscillates between Gregor's anxious internal monologue and detached external observation.
 
 ### Key Terminology
 
 | Term | Suggested Approach | Notes |
 |------|-------------------|-------|
-| Gregor Samsa | Transliterate | Proper name - use consistent romanization: 그레고르 잠자 |
-| vermin | Translate carefully | Central metaphor; Korean options: 벌레, 해충 - context requires non-specific insect/creature |
-| travelling salesman | Translate | 외판원 or 여행 세일즈맨 - period-appropriate occupation |
-| chief clerk | Translate | 주임 or 과장 - hierarchical business title |
-| armour-like | Translate with care | 갑옷 같은 - important visual/protective imagery |
-| floundering | Translate expressively | 허우적거리는 - conveys helplessness |
-| textile samples | Translate | 직물 견본 - specific to his profession |
-| fretsaw | Translate or explain | 실톱, 세공용 톱 - hobby tool, may need cultural context |
-| transformation/transformed | Translate consistently | 변신하다, 변형되다 - central thematic concept |
-| Medical insurance company | Translate | 의료보험회사 - period business institution |
+| vermin | Translate with care | German "Ungeziefer" is deliberately ambiguous. Korean should maintain the disgust and ambiguity rather than specifying exact insect type. Consider "벌레" or "해충" |
+| armour-like back | Literal translation | Physical description of transformation - "갑옷 같은 등" |
+| travelling salesman | Cultural equivalent | "외판원" or "여행하는 세일즈맨" - important to Gregor's identity |
+| chief clerk | Translate consistently | "과장" or "수석 사무원" - represents authority and workplace hierarchy |
+| textile samples | Literal translation | "직물 견본" - specific to his profession |
+| Mr. Samsa | Keep romanized + honorific | "삼자 씨" or maintain "Mr. Samsa" with Korean honorifics |
+| Gregor | Keep romanized | "그레고르" - consistent romanization throughout |
+| Grete | Keep romanized | "그레테" - sister's name |
+| furniture-rattling noise | Vivid imagery | Maintain the sensory vividness in translation |
+| workshy | Cultural concept | Consider Korean workplace culture equivalent for this judgment |
+| commercial traveller | Synonym variation | Same as "travelling salesman" - maintain consistency |
+| locksmith | Literal translation | "자물쇠 수리공" |
+| fretsaw | Specific tool | "실톱" or "프렛소" - shows Gregor's modest hobbies |
 
 ### Style Guidelines
-- Sentence structure: Long, complex sentences with multiple clauses reflecting Gregor's stream of consciousness and internal deliberation; occasional shorter sentences for dramatic effect or dialogue
-- Paragraph length: Generally long paragraphs (especially internal monologue sections) contrasted with shorter dialogue exchanges
-- Formatting conventions: Dialogue marked with quotation marks and "said/called/thought" attributions; seamless transitions between external action and internal thought
-- Temporal pacing: Detailed, almost real-time narration of morning events; time references are specific (half past six, quarter to seven, seven o'clock)
-- Physical description: Precise, clinical detail of bodily transformation and movement difficulties
+- Sentence structure: Kafka employs long, complex sentences with multiple subordinate clauses that reflect Gregor's anxious, circular thinking. Korean translation should maintain this syntactic complexity where possible, though some restructuring may be necessary for clarity.
+- Paragraph length: Variable - from single-sentence paragraphs for dramatic effect to long, dense paragraphs mirroring Gregor's mental state
+- Formatting conventions: Standard prose narrative; dialogue integrated within paragraphs using quotation marks
 - Special patterns:
-  - Frequent use of em-dashes for interrupted thoughts
-  - Internal questions reflecting protagonist's confusion and anxiety
-  - Repetition of key phrases for emphasis (e.g., "he thought")
-  - Matter-of-fact narration of fantastical premise
+  - Internal monologue in italics-equivalent ("What's happened to me?")
+  - Seamless shifts between Gregor's thoughts and external action
+  - Repetition for emphasis ("Gregor, Gregor")
+  - Free indirect discourse blending narrator and character perspective
 
 ### Cultural Adaptation Notes
-
-**For Korean Translation:**
-
-1. **Formal address and family hierarchy**: Korean requires careful handling of honorifics and family relationships. The family dynamics (parents, sister Grete) should use appropriate Korean familial terms (어머니/아버지/여동생) with suitable speech levels in dialogue.
-
-2. **Work culture and hierarchy**: The employer-employee relationship and the concept of the "chief clerk" visiting a worker's home reflects early 20th century European work culture. This power dynamic should be preserved in Korean with appropriate honorific language and hierarchical markers.
-
-3. **Time and routine**: The emphasis on punctuality, train schedules, and rigid work expectations may resonate differently in Korean context but should maintain the oppressive quality of Gregor's work life.
-
-4. **Physical space**: The description of the room, doors, and apartment layout follows European architecture. Keep spatial descriptions clear without excessive localization.
-
-5. **Emotional restraint vs. expression**: The family's German emotional restraint (mother's gentle voice, sister's quiet crying) should be preserved rather than adapted to more expressive Korean cultural norms, as this restraint is thematically significant.
-
-6. **Debt and obligation**: The concept of family debt (Gregor working to pay off parents' debt to employer) has strong resonance in Korean culture - this theme should translate well with appropriate emphasis.
-
-7. **Gender roles**: Period-appropriate gender dynamics (mother's domestic role, sister's dependence, male breadwinner pressure) should be preserved as historical/literary context.
+- Time references: "quarter to seven", "half past six" - maintain precision as time pressure is thematically crucial
+- Workplace culture: The authoritarian employer-employee relationship may resonate differently in Korean context; maintain the oppressive atmosphere while being mindful of Korean workplace dynamics
+- Family hierarchy: The family structure (dutiful son supporting parents and sister) has strong parallels in Korean culture - this aspect should translate naturally
+- Religious references: "God in Heaven!", "Oh, God" - adapt to Korean expressions of dismay while maintaining intensity ("세상에!", "오, 하느님")
+- Economic anxiety: Gregor's debt to employer for parents' obligations - this financial entrapment is culturally translatable
+- Domestic details: Room layout, furniture, breakfast routines - maintain the European early-1900s setting without over-exoticizing
+- Military reference: Photograph of Gregor as lieutenant - "중위" maintains the social status implication
 
 ### Translation Recommendations
+1. **Maintain ambiguity of transformation**: The text never explicitly names what Gregor has become. Avoid over-specifying (e.g., don't use "바퀴벌레" cockroach if the source says "vermin"). Preserve Kafka's deliberate vagueness.
 
-1. **Maintain the deadpan tone**: The narrator's matter-of-fact reporting of Gregor's impossible transformation is essential to Kafka's style. Avoid adding emotional coloring or explanatory language that isn't in the original.
+2. **Preserve psychological realism within absurdity**: Despite the fantastic premise, Gregor's concerns are mundanely realistic (missing work, disappointing parents). Korean translation should maintain this tonal contrast between the surreal situation and ordinary worries.
 
-2. **Preserve ambiguity**: The text never explicitly names what kind of creature Gregor has become (only "vermin"). Maintain this productive ambiguity in Korean rather than specifying an insect type.
+3. **Respect syntactic complexity**: Kafka's long, winding sentences mirror mental processes. While Korean syntax differs, attempt to maintain sentence length and complexity rather than over-simplifying into short, choppy sentences.
 
-3. **Internal monologue flow**: The long passages of Gregor's thoughts should maintain their meandering, anxious quality. Use Korean sentence connectors that preserve the stream-of-consciousness feel without fragmenting the flow.
+4. **Handle temporal urgency**: The precise time references (quarter to seven, seven o'clock, ten past seven) create mounting pressure. Maintain this specificity and urgency in Korean.
 
-4. **Temporal precision**: Keep all specific time references exact - they build mounting pressure and anxiety throughout the narrative.
+5. **Dialogue naturalization**: Speech should sound natural in Korean while preserving character relationships. The chief clerk's formal accusations, mother's worry, father's authority - each voice should be distinct through appropriate Korean speech levels and vocabulary.
 
-5. **Physical comedy and horror**: The detailed descriptions of Gregor's failed attempts to move, get out of bed, and turn the door key have both comic and horrifying elements. Maintain this tragicomic balance.
+6. **Sensory details**: Physical descriptions are crucial (brown belly, thin legs, brown fluid from mouth). Translate these visceral details directly without euphemism.
 
-6. **Dialogue attribution**: Carefully distinguish between spoken dialogue, thoughts, and narrative voice. Korean grammar allows for smooth integration of these levels.
+7. **Workplace terminology**: Use Korean equivalents for "travelling salesman", "chief clerk", "office assistant" that convey appropriate social/professional hierarchy.
 
-7. **Repetition for effect**: When the text repeats phrases ("he thought," "Gregor," character names in dialogue), preserve this repetition as it serves rhythmic and psychological functions.
+8. **Emotional restraint**: The narrator's tone is often detached even during disturbing events. Avoid adding emotional intensifiers not present in the source; let the horror emerge from matter-of-fact description.
 
-8. **Professional terminology**: Terms related to Gregor's work (travelling salesman, samples, contracts, turnover) should use appropriate business Korean while remaining accessible to general readers.
+9. **Internal vs. external perspective**: Track carefully when the narrative is in Gregor's mind versus external observation. Korean grammar can mark this through sentence-ending particles and evidentiality markers.
 
-9. **Family dynamics**: Dialogue between family members should reflect:
-   - Mother's gentle, worried tone (존댓말 towards Gregor if culturally appropriate, or intimate family speech)
-   - Father's authoritative, eventually aggressive tone
-   - Sister Grete's concerned but younger sibling relationship
-   - Chief clerk's professional but increasingly hostile tone
-
-10. **Sensory details**: Preserve vivid sensory descriptions (rain hitting window, brown belly, white spots, brown fluid from mouth, furniture-rattling noise of alarm clock) as they ground the surreal premise in physical reality.
-
-11. **Psychological realism**: Despite the impossible premise, Gregor's emotional responses (worry about work, consideration of family, frustration with his body) are psychologically realistic. Maintain this emotional authenticity.
-
-12. **Pacing in crisis moments**: The escalating tension (family knocking, chief clerk arriving, Gregor's desperate explanations, final confrontation) should build naturally in Korean with appropriate urgency markers.
-
-### Additional Context for Translator
-
-This is the opening section of Franz Kafka's "The Metamorphosis" (Die Verwandlung, 1915), one of the most influential works of 20th century literature. The excerpt covers the morning Gregor Samsa wakes as an insect-like creature and his first interactions with his family and employer.
-
-Key thematic elements to preserve:
-- **Alienation and isolation** - despite physical proximity to family
-- **Dehumanization through labor** - Gregor's identity entirely tied to work
-- **Family obligation and guilt** - debt as literal and psychological burden
-- **Communication breakdown** - inability to be understood despite effort
-- **Bodily autonomy loss** - loss of control paralleling loss of human status
-- **Bureaucratic absurdity** - rigid work expectations despite impossible circumstances
-
-The Korean translation should honor Kafka's precise, somewhat bureaucratic prose style while remaining accessible to contemporary readers. This is established literary classic that Korean readers will approach with serious literary expectations.
+10. **Literary register**: This is classic literature, not contemporary fiction. Use a Korean register appropriate for established literary works - neither archaic nor overly colloquial.

@@ -6,59 +6,66 @@
   "terms": [
     {
       "source": "chief clerk",
-      "translation": "주임 관리사",
-      "context": "The employer's representative who confronts Gregor about his absence, business performance, and monetary accountability; calls out Gregor's voice as inhuman",
+      "translation": "과장",
+      "context": "Authority figure who flees down the stairs in panic; represents workplace hierarchy and social authority",
       "category": "proper_noun",
-      "notes": "주임 (chief/senior) + 관리사 (manager/administrator) conveys hierarchical business authority. Alternative: 과장 (department head) - chose 주임 관리사 for more formal representation of employer's representative."
+      "notes": "Standard Korean business term for a supervisory position; conveys authority and hierarchy as specified in context analysis"
     },
     {
-      "source": "barricade yourself in your room",
-      "translation": "방에 자신을 갇히다",
-      "context": "The chief clerk's accusation that Gregor is isolating himself and refusing to communicate or perform duties",
+      "source": "stick",
+      "translation": "지팡이",
+      "context": "The chief clerk's walking stick seized by Gregor's father and used as a weapon to drive Gregor back into his room",
       "category": "domain_specific",
-      "notes": "자신을 갇히다 (confine oneself) captures the accusation of voluntary isolation and self-imprisonment that the clerk implies."
+      "notes": "Traditional Korean term for walking stick; in this violent context, maintains the physical reality of the weapon"
     },
     {
-      "source": "business duties / turnover",
-      "translation": "업무 책임 / 매출액",
-      "context": "Professional obligations and sales performance metrics; the clerk notes Gregor's turnover has been 'very unsatisfactory of late'",
+      "source": "banister",
+      "translation": "난간",
+      "context": "The stair railing; the clerk looks back 'with his chin on the banister' before leaping down",
       "category": "domain_specific",
-      "notes": "업무 책임 (business duties/responsibilities) and 매출액 (sales turnover/revenue) - proper business Korean terminology that reflects early 20th century commercial context."
+      "notes": "Standard architectural term in Korean; maintains the physical image of the clerk's desperate flight"
     },
     {
-      "source": "money that was recently entrusted to you",
-      "translation": "최근에 당신에게 맡겨진 돈",
-      "context": "Suggests Gregor may have been handling client funds or company money; potential explanation the employer offered for his absence",
-      "category": "domain_specific",
-      "notes": "당신에게 맡겨진 돈 (money entrusted to you) emphasizes the trust and accountability dimension of the employer's suspicion. Preserves the formal accusatory tone."
-    },
-    {
-      "source": "eight o'clock train",
-      "translation": "8시 기차",
-      "context": "Gregor's reference to his regular commute time; he promises to catch this train to make it to the office, establishing temporal pressure",
-      "category": "domain_specific",
-      "notes": "Direct translation with time precision. 기차 (train) is standard Korean. Specific times build mounting pressure throughout the narrative."
-    },
-    {
-      "source": "attack of dizziness",
-      "translation": "현기증 발작",
-      "context": "The false medical explanation Gregor invents to justify his inability to appear and let the clerk in",
-      "category": "domain_specific",
-      "notes": "현기증 (dizziness) + 발작 (attack/fit) - creates medical-sounding excuse in Korean. Maintains the desperate, improvised nature of Gregor's lie."
-    },
-    {
-      "source": "voice of an animal",
-      "translation": "동물의 목소리",
-      "context": "The chief clerk's observation that Gregor's speech is no longer human; the crucial moment of revelation that something is fundamentally wrong",
+      "source": "self controlled",
+      "translation": "자제력이 있는",
+      "context": "Description of the father's initial composure before he panics at the chief clerk's flight",
       "category": "idiom",
-      "notes": "동물의 목소리 (voice of an animal) - simple, direct translation that preserves the shocking revelation. The contrast with human speech is thematically crucial."
+      "notes": "Captures the father's initial restraint before losing control; uses adjective form natural in Korean"
     },
     {
-      "source": "locksmith",
-      "translation": "자물쇠 수리공",
-      "context": "The father summons a locksmith (via the kitchen maid Anna) to force entry into Gregor's locked room",
+      "source": "hissing noises",
+      "translation": "쉭쉭거리는 소리",
+      "context": "Animalistic sounds the father makes to frighten Gregor, 'like a wild man'",
       "category": "domain_specific",
-      "notes": "자물쇠 (lock) + 수리공 (repairman/tradesperson) - standard Korean term for locksmith. Conveys both the mechanical skill and working-class status of the tradesperson."
+      "notes": "Onomatopoeia in Korean that conveys threatening, animalistic quality of the father's aggression"
+    },
+    {
+      "source": "draught of air",
+      "translation": "통풍",
+      "context": "The strong wind from the window that the mother opens, creating environmental chaos in the room",
+      "category": "domain_specific",
+      "notes": "Korean term for wind or draft; maintains the environmental disruption and chaos the scene creates"
+    },
+    {
+      "source": "vile brown flecks",
+      "translation": "흉한 갈색 자국",
+      "context": "Injury marks left on the white door when Gregor's body scrapes against it, suggesting bleeding and damage",
+      "category": "domain_specific",
+      "notes": "Combines disgust (흉한) with physical description; visceral detail appropriate to literary horror register"
+    },
+    {
+      "source": "doorway",
+      "translation": "현관문",
+      "context": "The narrow passage that Gregor cannot navigate with his broad body, becoming a physical trap",
+      "category": "domain_specific",
+      "notes": "Standard term for doorway; the narrowness is emphasized in context rather than translation itself"
+    },
+    {
+      "source": "heavily bleeding",
+      "translation": "심하게 출혈하는",
+      "context": "Gregor's severe injury from being violently shoved through the doorframe into his room",
+      "category": "domain_specific",
+      "notes": "Direct translation maintaining visceral quality; 심하게 emphasizes the severity as original text requires"
     }
   ]
 }

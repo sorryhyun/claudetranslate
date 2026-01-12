@@ -1,23 +1,23 @@
 ## Chunk 2 Summary
 
 ### Brief Summary
-Gregor attempts to get out of bed but discovers he has multiple small legs he cannot control. His family (mother, father, and sister) grow concerned when they hear his voice has become distorted and begin knocking on his door, but Gregor avoids opening it. He struggles physically for nearly an hour, making little progress, and eventually settles back in bed while observing the morning fog through the window.
+Gregor attempts to get out of bed in response to time pressure and is interrupted by the arrival of the chief clerk, who demands an explanation for his absence from work. Despite his transformed state and physical difficulty, Gregor tries to maintain normalcy by insisting he is merely ill and promises to report to the office later, while his family expresses concern and confusion about his locked door.
 
 ### Key Terms in This Section
-- **Gregor Samsa**: The protagonist, whose transformation is progressively revealed through physical control loss
-- **travelling salesman/travelling**: Gregor's occupation, referenced as the source of his occupational hazard (the cold he incorrectly attributes his voice change to)
-- **small legs**: The primary evidence of his metamorphosis; he has multiple uncontrollable legs instead of normal human limbs
-- **voice change/squeaking**: The altered voice signal noticed by family members; initially misinterpreted as the onset of a cold
-- **wooden door**: Barrier between Gregor and his family; prevents the truth of his transformation from being discovered
-- **bedpost**: Physical obstacle during his failed attempt to move; causes injury to his sensitive lower body
+- chief clerk: Authority figure from Gregor's workplace who arrives demanding explanation; represents institutional/employer pressure
+- swinging/rocking motion: Gregor's method of attempting to exit bed using his transformed body
+- carpet: The floor surface Gregor is concerned about when falling; later where he lies helpless
+- chest of drawers: Furniture Gregor uses to help himself upright, indicating new physical capabilities despite transformation
+- turnover/business duties: Professional obligations referenced by chief clerk; indicates Gregor's workplace performance is being monitored
+- attack of dizziness: Excuse Gregor provides to account for his immobility without revealing true cause
 
 ### Connections
-- **Continues from**: Chunk 1 established that Gregor woke as a "vermin" with an armour-like back. Chunk 2 reveals the full extent of his physical transformation through his attempts to move.
-- **Sets up**: Gregor's physical disability and family concern will likely escalate in the next chunk; his isolation behind the door is temporary; the chief clerk's expected arrival will force a confrontation.
+- Continues from: Chunk 1 established Gregor's transformation and initial shock; this chunk extends the crisis into social consequences
+- Sets up: Family's and employer's growing suspicion and pressure; likely confrontation when Gregor's appearance is revealed
 
 ### Translation Notes
-- The voice distortion requires careful translation that conveys both the uncontrollable squeaking and the recognizable words beneath—this creates cognitive dissonance mirroring Gregor's psychological state.
-- The multiple small legs (plural) are crucial to the absurdist horror; preserve the specific count ambiguity the original text maintains.
-- Time references (quarter to seven, seven o'clock) and the one-hour struggle establish the narrative's real-time precision—maintain exact temporal markers.
-- Family relationships and dialogue tones are essential: mother's gentle voice, father's stern calls, sister's plaintive concern—these reveal character and family dynamics in Korean honorific speech.
-- Gregor's rationalization (attributing voice change to a cold, an occupational hazard) showcases his psychological denial of the metamorphosis—this deflection should be clear in translation.
+- Time references (quarter past seven, ten past seven, eight o'clock) create mounting urgency - maintain precision
+- Chief clerk's accusatory speech reflects hierarchical workplace dynamic - use Korean honorifics/speech levels to convey authority differential
+- Dialogue alternates between family members and official visitor - ensure distinct voices through appropriate Korean register variations
+- Gregor's internal dialogue contrasts with his attempted external composure - preserve psychological realism of trying to hide catastrophic condition
+- Physical descriptions of Gregor's movement (clawing, rocking, using "little legs") become clearer - avoid over-specifying insect type

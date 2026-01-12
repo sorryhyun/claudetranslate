@@ -1,23 +1,24 @@
-## Chunk 004 Summary
+## Chunk 4 Summary
 
 ### Brief Summary
-Gregor panics and makes excuses about illness to the chief clerk while desperately attempting to leave his bed and open the door. His family recognizes his transformed voice as inhuman, and his father summons a locksmith while his mother and sister rush out to find a doctor, leaving the front door open in their panic.
+In this climactic scene, Gregor pursues the chief clerk fleeing down the stairs, but his father intervenes to drive him back to his room. Using the clerk's walking stick and a newspaper, the father physically forces the transformed Gregor backwards through the doorway; Gregor becomes stuck in the doorframe and is violently shoved through, injuring himself severely and leaving bloodstains. The scene ends with the door slammed shut and silence restored.
 
 ### Key Terms in This Section
-- chief clerk: The employer's representative who has come to investigate Gregor's absence and monetary accountability
-- business duties/turnover: Gregor's professional obligations and sales performance being scrutinized
-- eight o'clock train: Specific temporal anchor suggesting Gregor's usual work schedule and his desperate attempt to maintain normalcy
-- attack of dizziness: The false excuse Gregor invents to explain his inability to appear
-- voice of an animal: The crucial moment when family and clerk recognize that Gregor's voice has become inhuman, confirming transformation
+- **chief clerk**: The authority figure and symbol of workplace hierarchy who flees in horror at Gregor's appearance
+- **stick (walking stick)**: The physical instrument of violence used by Gregor's father to drive him back
+- **doorway/doorframe**: The narrow physical barrier that traps Gregor as he tries to escape the family's panic
+- **father**: Shifts from relatively self-controlled observer to violent actor, showing decisive aggression
+- **brown flecks/bleeding**: Visceral injury details emphasizing Gregor's pain and vulnerability
+- **hissing**: Sound used to frighten Gregor, suggesting animalistic treatment
 
 ### Connections
-- Continues from: Previous tension of family waiting outside, chief clerk's arrival, Gregor's internal debate about opening the door
-- Sets up: Escalating family crisis response (calling doctor, locksmith), physical attempts to force entry or unlock door, revelation of Gregor's monstrous state to multiple witnesses
+- **Continues from**: Chunk 3's scene of family horror at Gregor's appearance and the chief clerk's arrival; the accumulating family panic
+- **Sets up**: This appears to be the final chunk, ending with Gregor isolated in his room and the household restored to silence—establishing the confinement that will define subsequent narrative developments
 
 ### Translation Notes
-- Gregor's rushed, breathless dialogue ("But Sir", "Just a moment", "Be patient!") should convey panic and physical effort; use appropriate Korean conversational markers
-- The chief clerk's formal accusations (about money entrusted, unsatisfactory turnover, business failures) use business Korean terminology - maintain bureaucratic tone
-- Mother's shift from concern to realization ("he could be seriously ill and we're making him suffer") shows emotional escalation - use appropriate Korean family speech levels
-- Key phrase "voice of an animal" (line 84) is the turning point: this is the moment of recognition - handle with gravitas
-- Father's rapid command "get a locksmith here, now!" should convey urgent authority with appropriate honorific Korean imperative forms
-- Preserve the specific time reference "eight o'clock train" - maintains mounting temporal pressure throughout narrative
+- The father's hissing ("like a wild man") is a key detail conveying dehumanization of the attacker
+- The precise physical comedy of Gregor's inability to move backwards and navigate the narrow doorway maintains Kafka's blend of absurd horror with physical realism
+- Maintain matter-of-fact tone even during the violence; the narrator's detachment makes the scene more disturbing
+- The "vile brown flecks" reference maintains the text's visceral imagery without specification of what the body fluid is
+- Father's use of the clerk's stick adds shame/rejection dimension—the family's property used as a weapon
+- The spatial blocking (turning slowly, hissing from distance, final violent shove) requires careful translation of movement and direction verbs

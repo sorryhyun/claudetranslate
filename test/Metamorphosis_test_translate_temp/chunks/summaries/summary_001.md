@@ -1,27 +1,28 @@
 ## Chunk 1 Summary
 
 ### Brief Summary
-Gregor Samsa wakes one morning to find himself transformed into a repulsive insect-like creature, discovering his new body has a hard back, brown belly, and many thin legs. Initially attempting to deny the reality of his situation and go back to sleep, he becomes trapped in anxious internal monologue about his job as a travelling salesman, his family obligations, and mounting professional pressures as he realizes he will be late for work. His deliberation reveals deep resentment toward his career and employer, alongside his reluctant commitment to paying off family debt, all while physically struggling with his transformed body.
+Gregor Samsa wakes to find himself mysteriously transformed into a horrifying vermin-like creature in his bed. As he struggles to understand his transformation and attempts to rise, his internal monologue reveals his anxieties about his job as a travelling salesman, his family's financial dependence on him, and his general dissatisfaction with his life. His family members check on him when they realize he's still home at an unusual hour, and he responds in a strangely altered voice that alarmed them.
 
 ### Key Terms in This Section
-- **Gregor Samsa**: The protagonist; a travelling salesman who has mysteriously transformed overnight
-- **vermin**: The unnamed creature Gregor has become; deliberately left non-specific and disturbing
-- **armour-like back**: Gregor's new hard, protective outer covering; suggests both insect carapace and defensive imagery
-- **travelling salesman**: Gregor's occupation; a commercial profession involving constant movement and client interaction
-- **textile samples**: Physical goods Gregor carries for his sales work
-- **chief clerk**: His employer's representative; symbol of workplace authority and surveillance
-- **family debt**: The financial obligation binding Gregor to his job; central to his psychological burden
+- Gregor Samsa: The protagonist, a travelling salesman who has mysteriously transformed into an insect-like creature
+- vermin: The deliberately ambiguous term for what Gregor has become (original "Ungeziefer" should remain vague, not specified as particular insect)
+- travelling salesman: Gregor's profession; important to his identity and source of financial obligation
+- armour-like back: The hard, protective-seeming back surface of his transformed body
+- textile samples: The commercial goods Gregor sells; currently unpacked on his table
+- mother, father, sister (Grete): Family members whose voices enter the narrative
+- alarm clock: Symbolic object representing time pressure and Gregor's obligations; critical to plot timing
+- four o'clock/seven o'clock references: Precise temporal markers creating urgency around work commitments
 
 ### Connections
-- **Opens the narrative**: This is the opening of Kafka's "The Metamorphosis" establishing the impossible premise and Gregor's immediate psychological response
-- **Sets up**: The family's discovery of his transformation, the chief clerk's visit, escalating conflicts with family members, and the entire arc of his physical and social decline
-- **Thematic foundation**: Establishes key themes of alienation, dehumanization through labor, family obligation, and loss of bodily autonomy
+- **Begins:** The very opening of the novella - introduces the central transformation and Gregor's immediate crisis
+- **Sets up:** Family's discovery of his condition, practical problems of his transformed state, deeper exploration of his work obligations and family dynamics in subsequent sections
 
 ### Translation Notes
-- Maintain the matter-of-fact tone when describing the fantastical transformation; avoid adding emotional coloring
-- Preserve the ambiguity of "vermin" rather than specifying an insect type
-- Keep internal monologue's meandering, anxious quality using appropriate Korean sentence connectors
-- Maintain exact time references (6:30, quarter to seven, etc.) as they build mounting pressure
-- Balance tragicomic elements in physical descriptions of Gregor's helpless movements
-- Preserve the deadpan narrative voice contrasted with Gregor's internal anxiety
-- Honor Kafka's bureaucratic precision while keeping language accessible to contemporary readers
+- Maintain the matter-of-fact tone despite the surreal premise - Kafka describes horrifying transformation in mundane, realistic language
+- Preserve the long, complex sentence structure with multiple subordinate clauses that reflect Gregor's anxious, circular thinking
+- Keep "vermin" ambiguous; do not specify insect type. Consider Korean "벌레" or "해충" while maintaining disgust and uncertainty
+- Maintain precise time references - temporal urgency is thematically crucial to the piece
+- Preserve the psychological realism: despite fantastic transformation, Gregor's concerns remain mundanely realistic (missing work, disappointing parents)
+- Handle "workshy" (workshy) with awareness of Korean workplace cultural context
+- Dialogue should sound natural in Korean while maintaining distinct character voices through appropriate speech levels
+- Sensory details (brown belly, thin legs, white spots) should be translated directly without euphemism

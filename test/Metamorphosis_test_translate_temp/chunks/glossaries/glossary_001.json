@@ -5,60 +5,60 @@
   "target_language": "korean",
   "terms": [
     {
-      "source": "Gregor Samsa",
-      "translation": "그레고르 잠자",
-      "context": "The protagonist's full name; appears throughout as subject of narrative",
-      "category": "proper_noun",
-      "notes": "Transliterated directly into Korean characters. Maintains consistent proper name format throughout the narrative."
+      "source": "vermin",
+      "translation": "해충",
+      "context": "He found himself transformed in his bed into a horrible vermin. German 'Ungeziefer' is deliberately ambiguous and should not be translated as a specific insect type.",
+      "category": "domain_specific",
+      "notes": "Chosen over '벌레' to maintain the sense of repulsion and degradation while preserving ambiguity. '해충' conveys pest/noxious creature without specifying exact insect type, capturing Kafka's deliberate vagueness."
     },
     {
-      "source": "vermin",
-      "translation": "벌레",
-      "context": "The unspecified creature Gregor has become; central metaphor for his transformation and degradation",
-      "category": "domain_specific",
-      "notes": "Chosen '벌레' (insect/creature) over '해충' (pest) to maintain the ambiguity and non-specific nature of the creature. This preserves Kafka's deliberate vagueness about what exactly Gregor has become, which is central to the story's surreal power."
+      "source": "Gregor Samsa",
+      "translation": "그레고르 삼자",
+      "context": "The protagonist who has mysteriously transformed. The text uses 'Gregor' as the primary name.",
+      "category": "proper_noun",
+      "notes": "Romanized in Korean script following standard literary practice. '그레고르' for first name, '삼자' for surname maintains consistency with the source text."
     },
     {
       "source": "travelling salesman",
       "translation": "외판원",
-      "context": "Gregor's occupation; defines his work identity and generates his internal anxiety about obligations",
+      "context": "Gregor's profession. Referenced multiple times: 'Samsa was a travelling salesman' and 'travelling salesmen live a life of luxury.' Important to Gregor's identity and financial obligations.",
       "category": "domain_specific",
-      "notes": "Used '외판원' (traveling salesman/commercial representative) which is the standard Korean term for this period-appropriate occupation. Reflects the professional identity that defines Gregor's existence."
+      "notes": "Standard Korean term for traveling sales representative. More idiomatic than literal translation, conveying the professional status and commercial context essential to Gregor's character and motivation."
     },
     {
       "source": "armour-like back",
       "translation": "갑옷 같은 등",
-      "context": "Visual description of Gregor's transformed body; suggests protective shell and vulnerability simultaneously",
+      "context": "Physical description of Gregor's transformed body: 'He lay on his armour-like back.' Emphasizes the hard, protective quality of his new exoskeleton.",
       "category": "technical",
-      "notes": "Uses '갑옷 같은' (armor-like) combined with '등' (back). This preserves the dual imagery of protection and vulnerability that the original conveys."
+      "notes": "Direct, literal translation that preserves the simile structure and visceral quality of the original. '갑옷' (armor) conveys hardness and protection; '같은' maintains the comparative structure."
     },
     {
       "source": "textile samples",
       "translation": "직물 견본",
-      "context": "Physical merchandise Gregor carries for his profession; spread on his table",
+      "context": "The commercial goods Gregor sells: 'A collection of textile samples lay spread out on the table.' Represents his profession and current obligations.",
       "category": "domain_specific",
-      "notes": "Direct translation using '직물' (textile/fabric) and '견본' (sample). Clearly identifies the specific merchandise of his sales profession."
+      "notes": "Standard Korean business/commerce terminology. '직물' (textile) and '견본' (sample) clearly convey the merchandise aspect of his traveling salesman profession."
     },
     {
-      "source": "chief clerk",
-      "translation": "주임",
-      "context": "Employer's representative who monitors Gregor; symbol of workplace surveillance and authority hierarchy",
+      "source": "workshy",
+      "translation": "일을 회피하는",
+      "context": "Used by the doctor's perspective via Gregor's thoughts: the doctor believed 'no-one was ever ill but that many were workshy.' A judgment about avoiding work.",
       "category": "domain_specific",
-      "notes": "Used '주임' (chief/supervisor) rather than '과장' (department head) to reflect a middle management position that represents authority without being the highest level. Maintains the hierarchical power dynamic essential to the narrative."
-    },
-    {
-      "source": "transformed",
-      "translation": "변신하다",
-      "context": "Central verb describing Gregor's metamorphosis; used consistently throughout",
-      "category": "technical",
-      "notes": "Used '변신하다' (to transform/metamorphose) as the primary verb for consistency. This conveys both the physical and existential transformation central to the narrative and aligns with the thematic importance emphasized in the context analysis."
+      "notes": "Rendered as phrase '일을 회피하는' (work-avoiding/shirking) rather than single term, capturing the pejorative judgment and cultural context of workplace discipline common to both Western and Korean cultures."
     },
     {
       "source": "office assistant",
-      "translation": "사무원",
-      "context": "Junior workplace figure sent to monitor office attendance and report absences to boss",
+      "translation": "사무보조원",
+      "context": "The boss's subordinate who monitors employees: 'The office assistant would have been there to see the five o'clock train go.' Represents workplace hierarchy and surveillance.",
       "category": "domain_specific",
-      "notes": "Used '사무원' (office assistant/clerk) to denote a junior workplace position. Maintains the workplace hierarchy and surveillance theme of the narrative."
+      "notes": "Korean office hierarchy term that conveys the subordinate monitoring role. '사무' (office) + '보조원' (assistant) clearly indicates administrative rank and surveillance function."
+    },
+    {
+      "source": "alarm clock",
+      "translation": "자명종",
+      "context": "The clock on the chest of drawers that failed to wake Gregor: 'he could see from the bed that it had been set for four o'clock.' Symbol of time pressure and obligation.",
+      "category": "technical",
+      "notes": "Standard Korean term for alarm clock. '자명종' maintains the mechanical, precise quality associated with time pressure and obligation central to Gregor's anxiety."
     }
   ]
 }

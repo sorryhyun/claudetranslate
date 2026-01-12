@@ -1,166 +1,52 @@
 {
-  "version": "1.0",
-  "created_at": "2026-01-11T04:56:17.909309+00:00",
-  "updated_at": "2026-01-11T05:11:33.833909+00:00",
+  "version": "2.0",
+  "created_at": "2026-01-12T01:52:40.397528+00:00",
+  "updated_at": "2026-01-12T02:10:09.578077+00:00",
   "source": {
-    "file_path": "/home/soryhyun/claudetranslate/test/Metamorphosis_test.txt",
+    "file_path": "/home/sorryhyun/claudetranslate/test/Metamorphosis_test.txt",
     "word_count": 7083
   },
   "target": {
     "language": "korean",
     "code": "ko",
-    "output_path": "/home/soryhyun/claudetranslate/test/Metamorphosis_test_ko.txt"
+    "output_path": "/home/sorryhyun/claudetranslate/test/Metamorphosis_test_ko.txt"
   },
   "options": {
-    "skip_verify": false,
-    "target_chunk_words": 1000,
-    "min_chunk_words": 500,
-    "max_chunk_words": 1500
+    "skip_verify": false
   },
   "phases": {
     "input_validation": {
       "status": "completed",
-      "completed_at": "2026-01-11T04:56:17.909309+00:00"
+      "completed_at": "2026-01-12T01:52:40.397528+00:00"
     },
     "context_analysis": {
       "status": "completed",
-      "completed_at": "2026-01-11T04:57:47.804028+00:00"
+      "completed_at": "2026-01-12T01:53:57.338809+00:00"
     },
     "text_splitting": {
       "status": "completed",
-      "completed_at": "2026-01-11T04:58:01.558362+00:00"
+      "completed_at": "2026-01-12T01:54:08.052120+00:00"
     },
     "summarization": {
       "status": "completed",
-      "completed_at": "2026-01-11T04:59:34.862071+00:00"
+      "completed_at": "2026-01-12T01:54:49.016939+00:00"
     },
     "glossary_translation": {
       "status": "completed",
-      "completed_at": "2026-01-11T05:01:02.826756+00:00"
+      "completed_at": "2026-01-12T01:55:31.932548+00:00"
     },
     "translation": {
       "status": "completed",
-      "completed_at": "2026-01-11T05:06:17.509416+00:00"
+      "completed_at": "2026-01-12T01:59:04.688836+00:00"
     },
     "verification": {
       "status": "completed",
-      "completed_at": "2026-01-11T05:10:27.762014+00:00"
+      "completed_at": "2026-01-12T02:03:18.546206+00:00"
     },
     "assembly": {
       "status": "completed",
-      "completed_at": "2026-01-11T05:11:33.833909+00:00"
+      "completed_at": "2026-01-12T02:10:09.578077+00:00"
     }
   },
-  "chunks": [
-    {
-      "index": 1,
-      "source_file": "chunks/source/chunk_001.txt",
-      "word_count": 1015,
-      "start_pos": 0,
-      "end_pos": 5420,
-      "headers": [],
-      "summary_file": "chunks/summaries/summary_001.md",
-      "summary_status": "pending",
-      "glossary_file": "chunks/glossaries/glossary_001.json",
-      "glossary_status": "pending",
-      "translation_file": "chunks/translations/translation_001.md",
-      "translation_status": "pending",
-      "translation_confidence": null,
-      "verification_file": "chunks/verifications/verification_001.md",
-      "verification_status": "pending",
-      "verification_score": null
-    },
-    {
-      "index": 2,
-      "source_file": "chunks/source/chunk_002.txt",
-      "word_count": 1038,
-      "start_pos": 5420,
-      "end_pos": 11083,
-      "headers": [],
-      "summary_file": "chunks/summaries/summary_002.md",
-      "summary_status": "pending",
-      "glossary_file": "chunks/glossaries/glossary_002.json",
-      "glossary_status": "pending",
-      "translation_file": "chunks/translations/translation_002.md",
-      "translation_status": "pending",
-      "translation_confidence": null,
-      "verification_file": "chunks/verifications/verification_002.md",
-      "verification_status": "pending",
-      "verification_score": null
-    },
-    {
-      "index": 3,
-      "source_file": "chunks/source/chunk_003.txt",
-      "word_count": 1146,
-      "start_pos": 11083,
-      "end_pos": 17166,
-      "headers": [],
-      "summary_file": "chunks/summaries/summary_003.md",
-      "summary_status": "pending",
-      "glossary_file": "chunks/glossaries/glossary_003.json",
-      "glossary_status": "pending",
-      "translation_file": "chunks/translations/translation_003.md",
-      "translation_status": "pending",
-      "translation_confidence": null,
-      "verification_file": "chunks/verifications/verification_003.md",
-      "verification_status": "pending",
-      "verification_score": null
-    },
-    {
-      "index": 4,
-      "source_file": "chunks/source/chunk_004.txt",
-      "word_count": 1118,
-      "start_pos": 17166,
-      "end_pos": 23126,
-      "headers": [],
-      "summary_file": "chunks/summaries/summary_004.md",
-      "summary_status": "pending",
-      "glossary_file": "chunks/glossaries/glossary_004.json",
-      "glossary_status": "pending",
-      "translation_file": "chunks/translations/translation_004.md",
-      "translation_status": "pending",
-      "translation_confidence": null,
-      "verification_file": "chunks/verifications/verification_004.md",
-      "verification_status": "pending",
-      "verification_score": null
-    },
-    {
-      "index": 5,
-      "source_file": "chunks/source/chunk_005.txt",
-      "word_count": 1330,
-      "start_pos": 23126,
-      "end_pos": 30304,
-      "headers": [],
-      "summary_file": "chunks/summaries/summary_005.md",
-      "summary_status": "pending",
-      "glossary_file": "chunks/glossaries/glossary_005.json",
-      "glossary_status": "pending",
-      "translation_file": "chunks/translations/translation_005.md",
-      "translation_status": "pending",
-      "translation_confidence": null,
-      "verification_file": "chunks/verifications/verification_005.md",
-      "verification_status": "pending",
-      "verification_score": null
-    },
-    {
-      "index": 6,
-      "source_file": "chunks/source/chunk_006.txt",
-      "word_count": 1436,
-      "start_pos": 30304,
-      "end_pos": 38010,
-      "headers": [],
-      "summary_file": "chunks/summaries/summary_006.md",
-      "summary_status": "pending",
-      "glossary_file": "chunks/glossaries/glossary_006.json",
-      "glossary_status": "pending",
-      "translation_file": "chunks/translations/translation_006.md",
-      "translation_status": "pending",
-      "translation_confidence": null,
-      "verification_file": "chunks/verifications/verification_006.md",
-      "verification_status": "pending",
-      "verification_score": null
-    }
-  ],
-  "context_analysis_file": "context/context_analysis.md",
-  "glossary_file": "glossary.json"
+  "chunk_count": 4
 }

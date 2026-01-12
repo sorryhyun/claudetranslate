@@ -2,7 +2,7 @@
 name: translator
 description: Translates text chunks into the target language while maintaining consistency with established terminology, tone, and context. Use this agent to perform the actual translation work in the pipeline.
 tools: ["Read", "Write"]
-model: sonnet
+model: opus
 color: green
 ---
 
