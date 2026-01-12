@@ -23,20 +23,20 @@ A multi-stage document translation pipeline for Claude Code that uses specialize
 
 ```bash
 # Translate a document to Korean
-/translate report.md --target korean
+/claude-translate:translate report.md --target korean
 
 # Using language codes
-/translate report.md --target ko
+/claude-translate:translate report.md --target ko
 ```
 
 ### With Options
 
 ```bash
 # Custom output file
-/translate docs/guide.txt --target japanese --output docs/guide_ja.txt
+/claude-translate:translate docs/guide.txt --target japanese --output docs/guide_ja.txt
 
 # Skip verification for faster processing
-/translate article.md --target spanish --skip-verify
+/claude-translate:translate article.md --target spanish --skip-verify
 ```
 
 ## Pipeline Stages
@@ -87,7 +87,7 @@ claudetranslate/
 │   ├── japanese.md
 │   └── ... (19 languages)
 ├── commands/
-│   └── translate.md             # /translate slash command
+│   └── translate.md             # /claude-translate:translate slash command
 ├── agents/
 │   ├── context-analyzer.md      # Document analysis agent
 │   ├── summarizer.md            # Section summarization agent

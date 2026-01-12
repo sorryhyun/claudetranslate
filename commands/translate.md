@@ -42,6 +42,15 @@ source_translate_temp/
     └── verifications/      # verification_001.md, verification_002.md, ...
 ```
 
+## Important: Avoid Reading the Entire Source File
+
+**NEVER read the entire source file at once.** Documents submitted for translation are often very large (books, manuals, reports) and reading them entirely would consume excessive context. Instead:
+
+- Only read small portions when needed for validation (e.g., first few lines to verify format)
+- Rely on the `split_text` MCP tool to handle chunking
+- Work with individual chunk files after splitting
+- Let agents read only their assigned chunks
+
 ## Pipeline Phases
 
 Execute each phase in order. Use TodoWrite to track progress through all 6 phases.
@@ -63,7 +72,7 @@ Execute each phase in order. Use TodoWrite to track progress through all 6 phase
    - **Skip verification** flag via `--skip-verify` (optional, default: false)
 
 3. Validate source file:
-   - Use Read tool to verify file exists and is readable
+   - Use Bash with `test -f "[path]"` or `head -n 1` to verify file exists (do NOT read the entire file)
    - If file not found, report error and suggest checking the path
 
 4. Validate target language:
